@@ -2,12 +2,13 @@
 This is the Android App repo used for our SEG group project to design an On-Demand Home Repair Services App.
 
 ## Contributors (in alphabetical order):
-Ian Desson (Team-Leader)
+```
+Ian Desson
 Christian MacLean
 Matthew Malek
 Rohan Prasad
 Andrew Rizk
-
+```
 ## Deliverable 1 / Sprint 1
 ```
 > Create git repo with all contributors
