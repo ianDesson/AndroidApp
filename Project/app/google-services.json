@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "33706577355",
+    "firebase_url": "https://homerepairapp.firebaseio.com",
+    "project_id": "homerepairapp",
+    "storage_bucket": "homerepairapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:33706577355:android:8e470283835d8a59",
+        "android_client_info": {
+          "package_name": "com.example.andrew.project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "33706577355-ohd2sl81uh9mip0q4r2bvfjk5hdnpuk8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.andrew.project",
+            "certificate_hash": "ea5bfd0e5bcec7509b366d4a955b6ee6d2097a99"
+          }
+        },
+        {
+          "client_id": "33706577355-m0afftil7i5jev71ijh9h4ihje4uto5q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPPEUAJRJkxfpIBea6a4i7QnHJJlK8P84"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "33706577355-m0afftil7i5jev71ijh9h4ihje4uto5q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

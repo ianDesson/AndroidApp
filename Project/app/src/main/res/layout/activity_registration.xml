@@ -16,27 +16,30 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/btn1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="createAdmin"
         android:text="Admin"
         android:visibility="visible"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="191dp" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="createHomeOwner"
         android:text="Home Owner"
         android:visibility="visible"
         tools:layout_editor_absoluteX="104dp"
         tools:layout_editor_absoluteY="191dp" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btn3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="createServiceProvider"
         android:text="Service Provider"
         android:visibility="visible"
         tools:layout_editor_absoluteX="220dp"
