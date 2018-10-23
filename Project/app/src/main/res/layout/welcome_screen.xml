@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:layout_editor_absoluteY="25dp">
+
+    <RelativeLayout
+        android:id="@+id/welcome_screen_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="34dp">
+
+        <TextView
+            android:id="@+id/welcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="135dp"
+            android:layout_weight="1"
+            android:autoText="false"
+            android:contentDescription="Welcome"
+            android:text="welcome"
+            android:textSize="40sp"
+            android:visibility="visible"
+            tools:text="Welcome," />
+
+        <TextView
+            android:id="@+id/username_display"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="209dp"
+            android:layout_weight="1"
+            android:contentDescription="account username"
+            android:text="username"
+            android:textSize="23sp"
+            tools:text="Username" />
+
+        <TextView
+            android:id="@+id/signed_in_as_a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_weight="1"
+            android:text="TextView"
+            android:textSize="20sp"
+            tools:text="You are signed is as a" />
+
+        <TextView
+            android:id="@+id/account_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="238dp"
+            android:layout_weight="1"
+            android:contentDescription="The account type"
+            android:text="TextView"
+            tools:text="Account Type" />
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
