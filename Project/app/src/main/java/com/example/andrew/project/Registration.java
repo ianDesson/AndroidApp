@@ -31,9 +31,9 @@ public class Registration extends AppCompatActivity {
 
     public void createAdmin(View view) {
         adminCreated = true;
-        String id = databaseUsers.push().getKey();
+        //String id = databaseUsers.push().getKey();
         user = new Admin();
-        databaseUsers.child(id).setValue(user);
+        //databaseUsers.child(id).setValue(user);
         Intent intent = new Intent(Registration.this, RegistrationUserInfo.class);
         intent.putExtra("User", user);
         startActivity(intent);
