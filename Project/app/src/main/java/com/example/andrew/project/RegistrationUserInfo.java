@@ -17,4 +17,8 @@ public class RegistrationUserInfo extends AppCompatActivity {
         Intent intent = getIntent();
         user = (User) intent.getSerializableExtra("User");
     }
+
+    public void continueButton (View view) {
+        
+    }
 }
