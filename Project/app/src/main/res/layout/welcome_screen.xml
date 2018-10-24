@@ -6,64 +6,81 @@
     android:layout_height="match_parent"
     tools:layout_editor_absoluteY="25dp">
 
-    <RelativeLayout
-        android:id="@+id/welcome_screen_layout"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="visible"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="34dp">
+        android:layout_marginBottom="260dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="140dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <TextView
             android:id="@+id/welcome"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="175dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="135dp"
+            android:layout_gravity="center_horizontal"
             android:layout_weight="1"
             android:autoText="false"
             android:contentDescription="Welcome"
             android:text="welcome"
             android:textSize="40sp"
             android:visibility="visible"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="86dp"
             tools:text="Welcome," />
 
         <TextView
             android:id="@+id/username_display"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="165dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="209dp"
+            android:layout_gravity="center_horizontal"
             android:layout_weight="1"
             android:contentDescription="account username"
             android:text="username"
             android:textSize="23sp"
+            tools:layout_editor_absoluteX="29dp"
+            tools:layout_editor_absoluteY="162dp"
             tools:text="Username" />
 
         <TextView
             android:id="@+id/signed_in_as_a"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="156dp"
             android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
             android:layout_weight="1"
             android:text="TextView"
             android:textSize="20sp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="135dp"
             tools:text="You are signed is as a" />
 
         <TextView
             android:id="@+id/account_type"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="175dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="238dp"
+            android:layout_gravity="center_horizontal"
             android:layout_weight="1"
             android:contentDescription="The account type"
             android:text="TextView"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="193dp"
             tools:text="Account Type" />
 
-    </RelativeLayout>
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
