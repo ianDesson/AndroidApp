@@ -7,9 +7,14 @@ import android.view.View;
 
 public class RegistrationUserInfo extends AppCompatActivity {
 
+    private User user;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration_user_info);
+
+        Intent intent = getIntent();
+        user = (User) intent.getSerializableExtra("User");
     }
 }

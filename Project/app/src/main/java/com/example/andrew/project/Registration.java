@@ -15,6 +15,7 @@ public class Registration extends AppCompatActivity {
 
     private boolean adminCreated;
     private DatabaseReference databaseUsers;
+    public User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,32 +23,38 @@ public class Registration extends AppCompatActivity {
         setContentView(R.layout.activity_registration);
         databaseUsers = FirebaseDatabase.getInstance().getReference("users");
         if (adminCreated) {
-            Button adminBtn = (Button) findViewById(R.id.btn1);
+            Button adminBtn = findViewById(R.id.btn1);
             adminBtn.setVisibility(View.GONE);
         }
 
     }
 
     public void createAdmin(View view) {
-        String id = databaseUsers.push().getKey();
-        Admin admin = new Admin();
-        databaseUsers.child(id).setValue(admin);
-        startActivity(new Intent(Registration.this, RegistrationUserInfo.class));
         adminCreated = true;
+        String id = databaseUsers.push().getKey();
+        user = new Admin();
+        databaseUsers.child(id).setValue(user);
+        Intent intent = new Intent(Registration.this, RegistrationUserInfo.class);
+        intent.putExtra("User", user);
+        startActivity(intent);
     }
 
     public void createHomeOwner(View view) {
         String id = databaseUsers.push().getKey();
-        HomeOwner homeOwner = new HomeOwner();
-        databaseUsers.child(id).setValue(homeOwner);
-        startActivity(new Intent(Registration.this, RegistrationUserInfo.class));
+        user = new HomeOwner();
+        databaseUsers.child(id).setValue(user);
+        Intent intent = new Intent(Registration.this, RegistrationUserInfo.class);
+        intent.putExtra("User", user);
+        startActivity(intent);
     }
 
     public void createServiceProvider(View view) {
         String id = databaseUsers.push().getKey();
-        ServiceProvider sp = new ServiceProvider();
-        databaseUsers.child(id).setValue(sp);
-        startActivity(new Intent(Registration.this, RegistrationUserInfo.class));
+        user = new ServiceProvider();
+        databaseUsers.child(id).setValue(user);
+        Intent intent = new Intent(Registration.this, RegistrationUserInfo.class);
+        intent.putExtra("User", user);
+        startActivity(intent);
     }
 }
 
