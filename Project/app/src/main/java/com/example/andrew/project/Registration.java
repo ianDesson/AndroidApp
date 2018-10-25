@@ -55,7 +55,7 @@ public class Registration extends AppCompatActivity {
         databaseUsers.child(id).child("homeOwners").setValue(user);
         Intent intent = new Intent(Registration.this, RegistrationUserInfo.class);
         intent.putExtra("User", user);
-        startActivity(new Intent());
+        startActivity(intent);
     }
 
     public void createServiceProvider(View view) {
