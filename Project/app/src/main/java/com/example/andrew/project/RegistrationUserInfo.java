@@ -102,9 +102,9 @@ public class RegistrationUserInfo extends AppCompatActivity {
             return;
         }
 
-        String email =  textInputEmail.getEditText().getText().toString();
-        String username = textInputUsername.getEditText().getText().toString();
-        String password = textInputPassword.getEditText().getText().toString();
+        String email =  textInputEmail.getEditText().getText().toString().trim();
+        String username = textInputUsername.getEditText().getText().toString().trim();
+        String password = textInputPassword.getEditText().getText().toString().trim();
 
         String input = "Email: " + email;
         input += "\n";

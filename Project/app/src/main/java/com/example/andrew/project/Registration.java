@@ -68,7 +68,7 @@ public class Registration extends AppCompatActivity {
     }
 
     public void login(View view) {
-
+        startActivity(new Intent(Registration.this, LoginScreen.class));
     }
 }
 
