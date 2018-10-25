@@ -60,7 +60,7 @@
             android:layout_centerInParent="true"
             android:layout_gravity="center_horizontal"
             android:layout_weight="1"
-            android:text="TextView"
+            android:text="You are signed in as a"
             android:textSize="20sp"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="135dp"
