@@ -1,19 +1,21 @@
 package com.example.andrew.project;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 
 public class Registration extends AppCompatActivity {
 
-    private boolean adminCreated;
     private DatabaseReference databaseUsers;
     public User user;
 
@@ -22,15 +24,23 @@ public class Registration extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
         databaseUsers = FirebaseDatabase.getInstance().getReference("users");
-        if (adminCreated) {
-            Button adminBtn = findViewById(R.id.btn1);
-            adminBtn.setVisibility(View.GONE);
-        }
+        databaseUsers.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.child("admin").getValue() != null) {
+                    Button adminBtn = findViewById(R.id.btn1);
+                    adminBtn.setVisibility(View.GONE);
+                }
+            }
 
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
     public void createAdmin(View view) {
-        adminCreated = true;
         String id = databaseUsers.push().getKey();
         user = new Admin();
         databaseUsers.child(id).child("admin").setValue(user);
