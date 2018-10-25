@@ -8,11 +8,15 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.regex.Pattern;
 
 public class RegistrationUserInfo extends AppCompatActivity {
 
     private User user;
+    private DatabaseReference mDatabase;
 
     //Used to ensure no white spaces allowed in password input
     private static final Pattern PASSWORD_PATTERN =
@@ -29,6 +33,8 @@ public class RegistrationUserInfo extends AppCompatActivity {
 
         Intent intent = getIntent();
         user = (User) intent.getSerializableExtra("User");
+
+        mDatabase = FirebaseDatabase.getInstance().getReference();
 
         //Added by Matt
         textInputEmail = findViewById(R.id.text_input_email);
@@ -69,10 +75,12 @@ public class RegistrationUserInfo extends AppCompatActivity {
         if (passwordInput.isEmpty()) {
             textInputPassword.setError("Field can't be empty");
             return false;
-        } else if (!PASSWORD_PATTERN.matcher(passwordInput).matches()) {
+        }
+        /*else if (!PASSWORD_PATTERN.matcher(passwordInput).matches()) {
             textInputPassword.setError("Password can't contain white spaces");
             return false;
-        } else {
+        }*/
+        else {
             textInputPassword.setError(null);
             return true;
         }
@@ -94,13 +102,31 @@ public class RegistrationUserInfo extends AppCompatActivity {
             return;
         }
 
-        String input = "Email: " + textInputEmail.getEditText().getText().toString();
+        String email =  textInputEmail.getEditText().getText().toString();
+        String username = textInputUsername.getEditText().getText().toString();
+        String password = textInputPassword.getEditText().getText().toString();
+
+        String input = "Email: " + email;
         input += "\n";
-        input += "Username: " + textInputUsername.getEditText().getText().toString();
+        input += "Username: " + username;
         input += "\n";
-        input += "Password: " + textInputPassword.getEditText().getText().toString();
+        input += "Password: " + password;
 
         Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
+
+        user.setEmail(email);
+        user.setUsername(username);
+        user.setPassword(password);
+
+        if (user instanceof Admin) {
+            mDatabase.child("users").child("admin").child(user.getUsername()).setValue(user);
+        } else if (user instanceof HomeOwner) {
+            mDatabase.child("users").child("homeOwners").child(user.getUsername()).setValue(user);
+        } else if (user instanceof ServiceProvider) {
+            mDatabase.child("users").child("serviceProviders").child(user.getUsername()).setValue(user);
+        }
+
+        startActivity(new Intent(RegistrationUserInfo.this, WelcomeScreen.class));
 
     }
 }

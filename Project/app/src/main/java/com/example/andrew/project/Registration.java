@@ -33,7 +33,7 @@ public class Registration extends AppCompatActivity {
         adminCreated = true;
         String id = databaseUsers.push().getKey();
         user = new Admin();
-        databaseUsers.child(id).setValue(user);
+        databaseUsers.child(id).child("admin").setValue(user);
         Intent intent = new Intent(Registration.this, RegistrationUserInfo.class);
         intent.putExtra("User", user);
         startActivity(intent);
@@ -42,16 +42,16 @@ public class Registration extends AppCompatActivity {
     public void createHomeOwner(View view) {
         String id = databaseUsers.push().getKey();
         user = new HomeOwner();
-        databaseUsers.child(id).setValue(user);
+        databaseUsers.child(id).child("homeOwners").setValue(user);
         Intent intent = new Intent(Registration.this, RegistrationUserInfo.class);
         intent.putExtra("User", user);
-        Registration.this.startActivity(new Intent());
+        startActivity(new Intent());
     }
 
     public void createServiceProvider(View view) {
         String id = databaseUsers.push().getKey();
         user = new ServiceProvider();
-        databaseUsers.child(id).setValue(user);
+        databaseUsers.child(id).child("serviceProviders").setValue(user);
         Intent intent = new Intent(Registration.this, RegistrationUserInfo.class);
         intent.putExtra("User", user);
         startActivity(intent);
