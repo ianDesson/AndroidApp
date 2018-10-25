@@ -51,7 +51,7 @@ public class LoginScreen extends AppCompatActivity {
                         if (login.getPassword().equals(password)){
                             Toast.makeText(LoginScreen.this, "Successful Login", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(LoginScreen.this, WelcomeScreen.class);
-                            intent.putExtra("user", login);
+                            intent.putExtra("User", login);
                             startActivity(intent);
                         } else {
                             Toast.makeText(LoginScreen.this, "Incorrect Password", Toast.LENGTH_SHORT).show();
@@ -66,7 +66,7 @@ public class LoginScreen extends AppCompatActivity {
                         if (login.getPassword().equals(password)){
                             Toast.makeText(LoginScreen.this, "Successful Login", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(LoginScreen.this, WelcomeScreen.class);
-                            intent.putExtra("user", login);
+                            intent.putExtra("User", login);
                             startActivity(intent);
                         } else {
                             Toast.makeText(LoginScreen.this, "Incorrect Password", Toast.LENGTH_SHORT).show();
@@ -80,7 +80,7 @@ public class LoginScreen extends AppCompatActivity {
                         if (login.getPassword().equals(password)){
                             Toast.makeText(LoginScreen.this, "Successful Login", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(LoginScreen.this, WelcomeScreen.class);
-                            intent.putExtra("user", login);
+                            intent.putExtra("User", login);
                             startActivity(intent);
                         } else {
                             Toast.makeText(LoginScreen.this, "Incorrect Password", Toast.LENGTH_SHORT).show();

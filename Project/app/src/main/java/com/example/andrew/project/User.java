@@ -16,7 +16,7 @@ public class User implements Serializable {
     }
 
     public User() {
-        
+
     }
 
     public String getUsername() {
