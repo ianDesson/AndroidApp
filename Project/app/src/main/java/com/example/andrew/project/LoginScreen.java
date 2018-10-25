@@ -44,10 +44,10 @@ public class LoginScreen extends AppCompatActivity {
         mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Toast.makeText(LoginScreen.this, "Yes", Toast.LENGTH_SHORT).show();
                 if (dataSnapshot.child("admin").child(username).exists()) {
+                    Toast.makeText(LoginScreen.this, "Yes", Toast.LENGTH_SHORT).show();
                     if (!username.isEmpty()) {
-                        User login = dataSnapshot.child("users").child("admin").child(username).getValue(User.class);
+                        User login = dataSnapshot.child("admin").child(username).getValue(User.class);
                         if (login.getPassword().equals(password)){
                             Toast.makeText(LoginScreen.this, "Successful Login", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(LoginScreen.this, WelcomeScreen.class);
@@ -60,7 +60,7 @@ public class LoginScreen extends AppCompatActivity {
                         Toast.makeText(LoginScreen.this, "User does not exist", Toast.LENGTH_SHORT).show();
                     }
 
-                } else if (dataSnapshot.child("users").child("homeOwners").child(username).exists()) {
+                } else if (dataSnapshot.child("homeOwners").child(username).exists()) {
                     if (!username.isEmpty()) {
                         User login = dataSnapshot.child("homeOwners").child(username).getValue(User.class);
                         if (login.getPassword().equals(password)){
