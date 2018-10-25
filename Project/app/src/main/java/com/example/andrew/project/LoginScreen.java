@@ -1,5 +1,6 @@
 package com.example.andrew.project;
 
+import android.app.Service;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -47,7 +48,7 @@ public class LoginScreen extends AppCompatActivity {
                 if (dataSnapshot.child("admin").child(username).exists()) {
                     Toast.makeText(LoginScreen.this, "Yes", Toast.LENGTH_SHORT).show();
                     if (!username.isEmpty()) {
-                        User login = dataSnapshot.child("admin").child(username).getValue(User.class);
+                        Admin login = dataSnapshot.child("admin").child(username).getValue(Admin.class);
                         if (login.getPassword().equals(password)){
                             Toast.makeText(LoginScreen.this, "Successful Login", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(LoginScreen.this, WelcomeScreen.class);
@@ -62,7 +63,7 @@ public class LoginScreen extends AppCompatActivity {
 
                 } else if (dataSnapshot.child("homeOwners").child(username).exists()) {
                     if (!username.isEmpty()) {
-                        User login = dataSnapshot.child("homeOwners").child(username).getValue(User.class);
+                        HomeOwner login = dataSnapshot.child("homeOwners").child(username).getValue(HomeOwner.class);
                         if (login.getPassword().equals(password)){
                             Toast.makeText(LoginScreen.this, "Successful Login", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(LoginScreen.this, WelcomeScreen.class);
@@ -76,7 +77,7 @@ public class LoginScreen extends AppCompatActivity {
                     }
                 } else if (dataSnapshot.child("serviceProviders").child(username).exists()) {
                     if (!username.isEmpty()) {
-                        User login = dataSnapshot.child("serviceProviders").child(username).getValue(User.class);
+                        ServiceProvider login = dataSnapshot.child("serviceProviders").child(username).getValue(ServiceProvider.class);
                         if (login.getPassword().equals(password)){
                             Toast.makeText(LoginScreen.this, "Successful Login", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(LoginScreen.this, WelcomeScreen.class);
