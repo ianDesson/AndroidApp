@@ -117,6 +117,8 @@ public class RegistrationUserInfo extends AppCompatActivity {
         user.setEmail(email);
         user.setUsername(username);
         user.setPassword(password);
+        Intent intent = new Intent(RegistrationUserInfo.this,  WelcomeScreen.class);
+        intent.putExtra("User", user);
 
         if (user instanceof Admin) {
             mDatabase.child("users").child("admin").child(user.getUsername()).setValue(user);
@@ -126,7 +128,7 @@ public class RegistrationUserInfo extends AppCompatActivity {
             mDatabase.child("users").child("serviceProviders").child(user.getUsername()).setValue(user);
         }
 
-        startActivity(new Intent(RegistrationUserInfo.this, WelcomeScreen.class));
+        startActivity(intent);
 
     }
 }

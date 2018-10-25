@@ -1,6 +1,6 @@
 #  On-Demand Home Repair Services App
 This is the Android App repo used for our SEG group project to design an On-Demand Home Repair Services App.
-
+https://github.com/ianDesson/AndroidApp
 ## Contributors (in alphabetical order):
 ```
 Ian Desson
