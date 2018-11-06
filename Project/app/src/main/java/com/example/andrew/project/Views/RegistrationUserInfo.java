@@ -1,4 +1,4 @@
-package com.example.andrew.project;
+package com.example.andrew.project.Views;
 
 import android.content.Intent;
 import android.support.design.widget.TextInputLayout;
@@ -8,9 +8,11 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.andrew.project.UserClasses.Admin;
-import com.example.andrew.project.UserClasses.HomeOwner;
-import com.example.andrew.project.UserClasses.User;
+import com.example.andrew.project.R;
+import com.example.andrew.project.Model.ServiceProvider;
+import com.example.andrew.project.Model.Admin;
+import com.example.andrew.project.Model.HomeOwner;
+import com.example.andrew.project.Model.User;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 

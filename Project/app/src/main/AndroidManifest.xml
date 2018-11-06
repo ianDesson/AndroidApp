@@ -14,29 +14,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Registration">
+        <activity android:name=".Views.Registration">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegistrationUserInfo">
+        <activity android:name=".Views.RegistrationUserInfo">
             <intent-filter>
                 <action android:name="android.intent.action.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".WelcomeScreen">
+        <activity android:name=".Views.WelcomeScreen">
             <intent-filter>
                 <action android:name="android.intent.action.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginScreen">
+        <activity android:name=".Views.LoginScreen">
             <intent-filter>
                 <action android:name="android.intent.action.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".ServicesView">
+        <activity android:name=".Views.ServicesView">
             <intent-filter>
                 <action android:name="android.intent.action.DEFAULT" />
             </intent-filter>

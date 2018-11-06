@@ -1,6 +1,4 @@
-package com.example.andrew.project;
-
-import com.example.andrew.project.UserClasses.User;
+package com.example.andrew.project.Model;
 
 public class ServiceProvider extends User {
 

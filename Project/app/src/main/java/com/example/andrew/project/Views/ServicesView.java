@@ -1,4 +1,4 @@
-package com.example.andrew.project;
+package com.example.andrew.project.Views;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.example.andrew.project.UserClasses.Service;
+import com.example.andrew.project.R;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

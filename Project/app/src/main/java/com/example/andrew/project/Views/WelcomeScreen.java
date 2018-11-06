@@ -1,4 +1,4 @@
-package com.example.andrew.project;
+package com.example.andrew.project.Views;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,9 +7,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.andrew.project.UserClasses.Admin;
-import com.example.andrew.project.UserClasses.HomeOwner;
-import com.example.andrew.project.UserClasses.User;
+import com.example.andrew.project.R;
+import com.example.andrew.project.Model.Admin;
+import com.example.andrew.project.Model.HomeOwner;
+import com.example.andrew.project.Model.User;
 
 public class WelcomeScreen extends AppCompatActivity{
 

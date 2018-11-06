@@ -1,4 +1,4 @@
-package com.example.andrew.project.UserClasses;
+package com.example.andrew.project.Model;
 
 public class Service {
 
