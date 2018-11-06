@@ -1,5 +1,6 @@
 package com.example.andrew.project.Views;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -62,5 +63,10 @@ public class ServicesView extends AppCompatActivity {
         ServicesAdapter adapter = new ServicesAdapter(this, titles, types, rates);
 
         listView.setAdapter(adapter);
+    }
+    public void addService(){
+
+        startActivity(new Intent(ServicesView.this, NewService.class));
+
     }
 }
