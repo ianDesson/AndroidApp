@@ -4,10 +4,23 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible" />
+    </LinearLayout>
+
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:gravity="bottom">
+        android:gravity="bottom"
+        android:visibility="visible">
 
         <Button
             android:layout_width="wrap_content"
@@ -16,18 +29,9 @@
             android:layout_alignParentEnd="true"
             android:layout_marginBottom="11dp"
             android:layout_marginEnd="21dp"
-            android:text="Add Service" />
+            android:text="Add"
+            android:visibility="visible" />
 
     </RelativeLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
-
-        <ListView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </LinearLayout>
 
 </FrameLayout>
