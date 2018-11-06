@@ -32,13 +32,15 @@ public class WelcomeScreen extends AppCompatActivity{
         }
         else if(user instanceof HomeOwner){
             accountType.setText("Home Owner");
+            srvcBtn.setVisibility(View.INVISIBLE);
         }
         else{
             accountType.setText("Service Provider");
+            srvcBtn.setVisibility(View.INVISIBLE);
         }
     }
 
     public void srvcBtn (View view) {
-
+        startActivity(new Intent(WelcomeScreen.this, ServicesView.class));
     }
 }

@@ -87,7 +87,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:onClick="srvcBtn"
-            android:text="Button"
+            android:text="Services"
             android:visibility="visible"
             tools:text="View Services" />
 
