@@ -81,6 +81,16 @@
             tools:layout_editor_absoluteY="193dp"
             tools:text="Account Type" />
 
+        <Button
+            android:id="@+id/srvcBtn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="srvcBtn"
+            android:text="Button"
+            android:visibility="visible"
+            tools:text="View Services" />
+
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

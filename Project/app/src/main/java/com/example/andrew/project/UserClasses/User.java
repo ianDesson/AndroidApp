@@ -1,4 +1,4 @@
-package com.example.andrew.project;
+package com.example.andrew.project.UserClasses;
 
 import java.io.Serializable;
 

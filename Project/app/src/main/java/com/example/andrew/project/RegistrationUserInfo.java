@@ -8,6 +8,9 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.andrew.project.UserClasses.Admin;
+import com.example.andrew.project.UserClasses.HomeOwner;
+import com.example.andrew.project.UserClasses.User;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
