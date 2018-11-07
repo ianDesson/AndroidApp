@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ListView;
 
 import com.example.andrew.project.R;
@@ -64,7 +65,7 @@ public class ServicesView extends AppCompatActivity {
 
         listView.setAdapter(adapter);
     }
-    public void addService(){
+    public void addService(View view){
 
         startActivity(new Intent(ServicesView.this, NewService.class));
 
