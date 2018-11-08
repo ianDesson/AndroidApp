@@ -34,7 +34,8 @@ public class NewService extends AppCompatActivity {
         setContentView(R.layout.new_service);
 
         Intent intent = getIntent();
-        service = (Service) intent.getSerializableExtra("Type");
+        //service = (Service) intent.getSerializableExtra("Type");
+        //service = new Service();
 
         aDatabase = FirebaseDatabase.getInstance().getReference();
 
@@ -60,6 +61,7 @@ public class NewService extends AppCompatActivity {
        // if (!validateEmail() | !validateUsername() | !validatePassword()) {
            // return;
         //}
+        service = new Service();
 
         String name =  textInputName.getEditText().getText().toString().trim();
         String type = textInputType.getEditText().getText().toString().trim();
