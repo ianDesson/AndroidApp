@@ -80,7 +80,6 @@ public class ServicesView extends AppCompatActivity {
 
 
 
-
     class ServicesAdapter extends BaseAdapter {
         Context context;
         String[] titles;
@@ -117,16 +116,16 @@ public class ServicesView extends AppCompatActivity {
             inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
             if (rowView == null)
-                rowView = inflater.inflate(R.layout.service_row, parent);
+                rowView = inflater.inflate(R.layout.service_row, null);
 
             TextView titleText = rowView.findViewById(R.id.title);
             titleText.setText(titles[position]);
 
             TextView typeText = rowView.findViewById(R.id.type);
-            typeText.setText(types[position]);
+            typeText.setText("Service Type: " + types[position]);
 
             TextView rateText = rowView.findViewById(R.id.rate);
-            rateText.setText(Double.toString(rates[position]));
+            rateText.setText("Rate: " + Double.toString(rates[position]));
             return rowView;
         }
     }
