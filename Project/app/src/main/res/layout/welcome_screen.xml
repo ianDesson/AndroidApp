@@ -31,7 +31,7 @@
             android:layout_weight="1"
             android:autoText="false"
             android:contentDescription="Welcome"
-            android:text="welcome"
+            android:text="Welcome"
             android:textSize="40sp"
             android:visibility="visible"
             tools:layout_editor_absoluteX="0dp"
