@@ -34,12 +34,10 @@ public class NewService extends AppCompatActivity {
         setContentView(R.layout.new_service);
 
         Intent intent = getIntent();
-        //service = (Service) intent.getSerializableExtra("Type");
-        //service = new Service();
 
         aDatabase = FirebaseDatabase.getInstance().getReference();
 
-        //Added by Andrew
+
         textInputName = findViewById(R.id.text_input_name);
         textInputType = findViewById(R.id.text_input_type);
         textInputRate = findViewById(R.id.text_input_rate);
