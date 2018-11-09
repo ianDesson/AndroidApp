@@ -1,6 +1,8 @@
 package com.example.andrew.project.Model;
 
-public class Service {
+import java.io.Serializable;
+
+public class Service implements Serializable {
 
     private String type;
     private String name;
