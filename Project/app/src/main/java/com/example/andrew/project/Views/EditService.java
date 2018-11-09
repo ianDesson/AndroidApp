@@ -40,6 +40,11 @@ public class EditService extends AppCompatActivity {
         if(ref.child(service.getName())== null) {
             startActivity(intent2);
         }
+        else {
+            newService.getEditText().setText(service.getName());
+            newType.getEditText().setText(service.getType());
+            newRate.getEditText().setText(service.getRate());
+        }
 
 
     }
