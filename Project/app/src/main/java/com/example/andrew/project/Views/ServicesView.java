@@ -9,10 +9,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.andrew.project.Model.Service;
 import com.example.andrew.project.R;
 
 import com.google.firebase.database.DataSnapshot;
@@ -58,11 +60,24 @@ public class ServicesView extends AppCompatActivity {
 
                 // Set the ListView's Adapter
                 ListView listView = findViewById(R.id.servicesList);
-                ServicesAdapter adapter = new ServicesAdapter(ServicesView.this, titles, types, rates);
+                final ServicesAdapter adapter = new ServicesAdapter(ServicesView.this, titles, types, rates);
                 Log.i("YEET", ""+rates.length);
 
                 listView.setAdapter(adapter);
 
+                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                        Service edit = new Service(adapter.getType(position),
+                                adapter.getTitle(position), adapter.getRate(position));
+
+                        Intent intent = new Intent(ServicesView.this, EditService.class);
+                        intent.putExtra("Service", edit);
+                        startActivity(intent);
+                    }
+                });
             }
 
             @Override
@@ -76,7 +91,6 @@ public class ServicesView extends AppCompatActivity {
         startActivity(new Intent(ServicesView.this, NewService.class));
 
     }
-
 
 
 
@@ -105,6 +119,18 @@ public class ServicesView extends AppCompatActivity {
             return null;
         }
 
+        public String getTitle(int position) {
+            return titles[position];
+        }
+
+        public String getType(int position) {
+            return types[position];
+        }
+
+        public double getRate(int position) {
+            return rates[position];
+        }
+
         @Override
         public long getItemId(int position) {
             return position;
@@ -117,16 +143,16 @@ public class ServicesView extends AppCompatActivity {
             inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
             if (rowView == null)
-                rowView = inflater.inflate(R.layout.service_row, parent);
+                rowView = inflater.inflate(R.layout.service_row, null);
 
             TextView titleText = rowView.findViewById(R.id.title);
             titleText.setText(titles[position]);
 
             TextView typeText = rowView.findViewById(R.id.type);
-            typeText.setText(types[position]);
+            typeText.setText("Service Type: " + types[position]);
 
             TextView rateText = rowView.findViewById(R.id.rate);
-            rateText.setText(Double.toString(rates[position]));
+            rateText.setText("Rate: " + Double.toString(rates[position]));
             return rowView;
         }
     }

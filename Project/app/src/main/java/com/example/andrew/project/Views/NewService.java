@@ -34,18 +34,49 @@ public class NewService extends AppCompatActivity {
         setContentView(R.layout.new_service);
 
         Intent intent = getIntent();
-        //service = (Service) intent.getSerializableExtra("Type");
-        //service = new Service();
 
         aDatabase = FirebaseDatabase.getInstance().getReference();
 
-        //Added by Andrew
+
         textInputName = findViewById(R.id.text_input_name);
         textInputType = findViewById(R.id.text_input_type);
         textInputRate = findViewById(R.id.text_input_rate);
 
     }
 
+    private boolean validateService(){
+        String serviceInput = textInputName.getEditText().getText().toString().trim();
+
+        if(serviceInput.isEmpty()){
+            textInputName.setError("Field can't be empty");
+            return false;
+        }else{
+            textInputName.setError(null);
+            return true;
+        }
+    }
+    private boolean validateType(){
+        String typeInput = textInputType.getEditText().getText().toString().trim();
+
+        if (typeInput.isEmpty()){
+            textInputType.setError("Field can't be empty");
+            return false;
+        }else{
+            textInputType.setError(null);
+            return true;
+        }
+    }
+    private boolean validateRate(){
+        String rateInput = textInputRate.getEditText().getText().toString().trim();
+
+        if(rateInput.isEmpty()){
+            textInputRate.setError("Field can't be empty");
+            return false;
+        }else{
+            textInputRate.setError(null);
+            return true;
+        }
+    }
     public void finishButton(View view) {
         //get the text from the three fields
         //store them as three dif strings
@@ -58,9 +89,9 @@ public class NewService extends AppCompatActivity {
 
         //startActivity(newIntent(RegistrationUserInfo.this, WelcomeScreen.class));
 
-       // if (!validateEmail() | !validateUsername() | !validatePassword()) {
-           // return;
-        //}
+       if (!validateService() | !validateType() | !validateRate()){
+        return;
+       }
         service = new Service();
 
         String name =  textInputName.getEditText().getText().toString().trim();
