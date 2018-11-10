@@ -10,9 +10,9 @@ jobs:
       - checkout
       - restore_cache:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
-      - run:
-         name: Chmod permissions  
-         command: sudo chmod +x /Project/gradlew
+#      - run:
+#         name: Chmod permissions  
+#         command: sudo chmod +x /Project/gradlew.bat
       - run:
           name: Download Dependencies
           command: ./gradlew androidDependencies
