@@ -43,7 +43,7 @@
         </activity>
         <activity android:name=".Views.NewService">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name=".Views.EditService">

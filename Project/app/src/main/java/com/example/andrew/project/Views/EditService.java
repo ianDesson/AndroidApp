@@ -24,26 +24,29 @@ public class EditService extends AppCompatActivity {
     private TextInputLayout newRate;
     Service service;
     Intent intent;
-    Button deleteButton = findViewById(R.id.deleteButton);
-    Button saveChangeButton = findViewById(R.id.saveChangeButtonEdit);
+    Button deleteButton;
+    Button saveChangeButton;
     Intent intent2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.service_edit);
+
+        saveChangeButton = findViewById(R.id.saveChangeButtonEdit);
+        deleteButton = findViewById(R.id.deleteButton);
         intent = getIntent();
         service = (Service) intent.getSerializableExtra("Service");
         ref = database.getReference("services");
-        newService = findViewById(R.id.serviceFieldEdit);
-        newType = findViewById(R.id.typeFieldEdit);
-        newRate = findViewById(R.id.rateFieldEdit);
+        newService = findViewById(R.id.text_input_name);
+        newType = findViewById(R.id.text_input_type);
+        newRate = findViewById(R.id.text_input_rate);
         if(ref.child(service.getName())== null) {
             startActivity(intent2);
         }
         else {
             newService.getEditText().setText(service.getName());
             newType.getEditText().setText(service.getType());
-            newRate.getEditText().setText(service.getRate());
+            newRate.getEditText().setText(""+service.getRate());
         }
 
 
