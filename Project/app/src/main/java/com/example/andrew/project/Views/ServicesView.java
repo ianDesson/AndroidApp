@@ -61,7 +61,6 @@ public class ServicesView extends AppCompatActivity {
                 // Set the ListView's Adapter
                 ListView listView = findViewById(R.id.servicesList);
                 final ServicesAdapter adapter = new ServicesAdapter(ServicesView.this, titles, types, rates);
-                Log.i("YEET", ""+rates.length);
 
                 listView.setAdapter(adapter);
 

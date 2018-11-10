@@ -68,11 +68,16 @@ public class NewService extends AppCompatActivity {
     }
     private boolean validateRate(){
         String rateInput = textInputRate.getEditText().getText().toString().trim();
-
-        if(rateInput.isEmpty()){
+        try {
+            Double.parseDouble(rateInput);
+        } catch (Exception e) {
+            textInputRate.setError("Not a valid rate");
+            return false;
+        }
+        if (rateInput.isEmpty()){
             textInputRate.setError("Field can't be empty");
             return false;
-        }else{
+        } else {
             textInputRate.setError(null);
             return true;
         }
@@ -85,7 +90,6 @@ public class NewService extends AppCompatActivity {
         //Do same thing for email
         //IF ALL THOSE ARE TRUE
         //Push to database
-        //Bring to the next page (welcome page)
 
         //startActivity(newIntent(RegistrationUserInfo.this, WelcomeScreen.class));
 
@@ -113,7 +117,7 @@ public class NewService extends AppCompatActivity {
         intent.putExtra("Service", name);
 
         if (service instanceof Service) {
-            aDatabase.child("services").child(((Service) service).getType()).setValue(service);
+            aDatabase.child("services").child(service.getName()).setValue(service);
         }
 
         startActivity(intent);
