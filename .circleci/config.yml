@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/ProductCatalog
+    working_directory: ~/AndroidApp/Project
     docker:
       - image: circleci/android:api-28-alpha
     environment:
@@ -22,7 +22,7 @@ jobs:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
       - run:
           name: Run UnitTest
-          command: Project/gradlew UnitTests
+          command: ./gradlew UnitTests
       - store_artifacts:
           path: app/build/outputs/apk/debug/
           destination: apks/
