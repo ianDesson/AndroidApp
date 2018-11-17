@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.andrew.project.R;
@@ -33,11 +34,13 @@ public class WelcomeScreen extends AppCompatActivity{
         }
         else if(user instanceof HomeOwner){
             accountType.setText("Home Owner");
-            srvcBtn.setVisibility(View.INVISIBLE);
         }
         else{
             accountType.setText("Service Provider");
             srvcBtn.setVisibility(View.INVISIBLE);
+
+            LinearLayout serviceProviderInfo = findViewById(R.id.service_provider_info);
+            serviceProviderInfo.setVisibility(View.VISIBLE);
         }
     }
 
@@ -46,4 +49,22 @@ public class WelcomeScreen extends AppCompatActivity{
         intent.putExtra("User", user);
         startActivity(intent);
     }
+
+    public void srcvViewBtn (View view) {
+        // Button that will open the Activity allowing the Service Provider to view their Services
+    }
+
+    public void srcvAddBtn (View view) {
+        // Button that will open the Activity allowing the Service Provider to add to their Services
+    }
+
+    public void avlViewBtn (View view) {
+        // Button that will open the Activity containing all of the Service Provider's avilabilities
+    }
+
+    public void avlEditBtn (View view) {
+        // Button that will open the Activity that will edit availabilities
+
+    }
+
 }
