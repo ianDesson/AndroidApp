@@ -14,7 +14,7 @@ import com.example.andrew.project.Model.User;
 
 public class WelcomeScreen extends AppCompatActivity{
 
-
+    private User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +25,7 @@ public class WelcomeScreen extends AppCompatActivity{
         Intent intent = getIntent();
         Button srvcBtn = findViewById(R.id.srvcBtn);
 
-        User user = (User) intent.getSerializableExtra("User");
+        user = (User) intent.getSerializableExtra("User");
         usernameDisplay.setText(user.getUsername());
         if(user instanceof Admin){
             accountType.setText("Admin");
@@ -42,6 +42,8 @@ public class WelcomeScreen extends AppCompatActivity{
     }
 
     public void srvcBtn (View view) {
-        startActivity(new Intent(WelcomeScreen.this, ServicesView.class));
+        Intent intent = new Intent(WelcomeScreen.this, ServicesView.class);
+        intent.putExtra("User", user);
+        startActivity(intent);
     }
 }

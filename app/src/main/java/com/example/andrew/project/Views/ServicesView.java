@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,8 +15,11 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.andrew.project.Model.Admin;
 import com.example.andrew.project.Model.Service;
 import com.example.andrew.project.R;
+
+import com.example.andrew.project.Model.User;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -38,6 +42,7 @@ public class ServicesView extends AppCompatActivity {
         final ArrayList<String> titlesList = new ArrayList<String>();
         final ArrayList<String> typesList = new ArrayList<String>();
         final ArrayList<Double> ratesList = new ArrayList<Double>();
+
 
         databaseReference = FirebaseDatabase.getInstance().getReference("services");
 
@@ -64,19 +69,29 @@ public class ServicesView extends AppCompatActivity {
 
                 listView.setAdapter(adapter);
 
-                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                Intent intent = getIntent();
+                User user = (User) intent.getSerializableExtra("User");
 
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (user instanceof Admin) {
 
-                        Service edit = new Service(adapter.getType(position),
-                                adapter.getTitle(position), adapter.getRate(position));
+                    // Add the ability to click on a listed service (only admins can)
+                    listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
-                        Intent intent = new Intent(ServicesView.this, EditService.class);
-                        intent.putExtra("Service", edit);
-                        startActivity(intent);
-                    }
-                });
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                            Service edit = new Service(adapter.getType(position),
+                                    adapter.getTitle(position), adapter.getRate(position));
+
+                            Intent intent = new Intent(ServicesView.this, EditService.class);
+                            intent.putExtra("Service", edit);
+                            startActivity(intent);
+                        }
+                    });
+                    // Make the Action button visible
+                    FloatingActionButton actionButton = findViewById(R.id.floatingActionButton2);
+                    actionButton.show();
+                }
             }
 
             @Override

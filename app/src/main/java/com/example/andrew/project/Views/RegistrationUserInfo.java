@@ -122,7 +122,12 @@ public class RegistrationUserInfo extends AppCompatActivity {
         user.setEmail(email);
         user.setUsername(username);
         user.setPassword(password);
-        Intent intent = new Intent(RegistrationUserInfo.this,  WelcomeScreen.class);
+        Intent intent;
+        if (user instanceof ServiceProvider)
+            intent = new Intent(RegistrationUserInfo.this, serviceProviderRegistration.class);
+        else
+            intent = new Intent(RegistrationUserInfo.this, WelcomeScreen.class);
+
         intent.putExtra("User", user);
 
         if (user instanceof Admin) {
