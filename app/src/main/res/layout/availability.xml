@@ -1,56 +1,257 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
-            android:text="Pick Your Availability"
+            android:layout_weight="0"
+            android:text="Customize Your Availability"
             android:textAlignment="center"
-            android:textSize="20sp" />
+            android:textSize="40sp" />
 
-        <Button
-            android:id="@+id/weekdays"
-            android:layout_width="124dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Week Days     9 - 5"
-            android:layout_marginTop="50dp"
-            tools:layout_editor_absoluteX="130dp"
-            tools:layout_editor_absoluteY="240dp"
-            tools:visibility="visible" />
-
-        <Button
-            android:id="@+id/weekends"
-            android:layout_width="131dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:text="Weekends        9 - 5"
-            android:visibility="visible"
-            tools:layout_editor_absoluteX="127dp"
-            tools:layout_editor_absoluteY="334dp" />
-
-        <Button
-            android:id="@+id/h24_7"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:text="24 / 7"
-            android:visibility="visible"
-            tools:layout_editor_absoluteX="148dp"
-            tools:layout_editor_absoluteY="147dp" />
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteY="567dp">
+
+            <TextView
+                android:id="@+id/textViewMonday"
+                android:layout_width="134dp"
+                android:layout_height="41dp"
+                android:layout_weight="1"
+                android:text="Monday"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/editTextMonday"
+                android:layout_width="106dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Timing" />
+
+            <CheckBox
+                android:id="@+id/checkBoxMonday"
+                android:layout_width="121dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Available" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteY="567dp">
+
+            <TextView
+                android:id="@+id/textViewTuesday"
+                android:layout_width="134dp"
+                android:layout_height="41dp"
+                android:layout_weight="1"
+                android:text="Tuesday"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/editTextTuesday"
+                android:layout_width="106dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Timing" />
+
+            <CheckBox
+                android:id="@+id/checkBoxTuesday"
+                android:layout_width="121dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Available" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteY="567dp">
+
+            <TextView
+                android:id="@+id/textViewWednesday"
+                android:layout_width="134dp"
+                android:layout_height="41dp"
+                android:layout_weight="1"
+                android:text="Wednesday"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/editTextWednesday"
+                android:layout_width="106dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Timing" />
+
+            <CheckBox
+                android:id="@+id/checkBoxWednesday"
+                android:layout_width="121dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Available" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="10dp"
+            tools:layout_editor_absoluteY="567dp">
+
+            <TextView
+                android:id="@+id/textViewThursday"
+                android:layout_width="134dp"
+                android:layout_height="41dp"
+                android:layout_weight="1"
+                android:text="Thursday"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/editTextThursday"
+                android:layout_width="106dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Timing" />
+
+            <CheckBox
+                android:id="@+id/checkBoxThursday"
+                android:layout_width="121dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Available" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteY="567dp">
+
+            <TextView
+                android:id="@+id/textViewFriday"
+                android:layout_width="134dp"
+                android:layout_height="41dp"
+                android:text="Friday"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/editTextFriday"
+                android:layout_width="106dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Timing" />
+
+            <CheckBox
+                android:id="@+id/checkBoxFriday"
+                android:layout_width="121dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Available" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteY="567dp">
+
+            <TextView
+                android:id="@+id/textViewSaturday"
+                android:layout_width="134dp"
+                android:layout_height="41dp"
+                android:text="Saturday"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/editTextSaturday"
+                android:layout_width="106dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Timing" />
+
+            <CheckBox
+                android:id="@+id/checkBoxSaturday"
+                android:layout_width="121dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Available" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteY="567dp">
+
+            <TextView
+                android:id="@+id/textViewSunday"
+                android:layout_width="134dp"
+                android:layout_height="41dp"
+                android:text="Sunday"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/editTextSunday"
+                android:layout_width="106dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Timing" />
+
+            <CheckBox
+                android:id="@+id/checkBoxSunday"
+                android:layout_width="121dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Available" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/AvailabilitySaveChangesButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save changes" />
+
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
