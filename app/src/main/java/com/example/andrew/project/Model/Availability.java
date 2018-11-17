@@ -10,61 +10,14 @@ public class Availability implements Serializable {
         times = new int[14];
     }
 
-    // Getters for the hours for each day of the week.
-    public int getSundayStart () {
-        return times[0];
+    // Getter method
+
+    public int getTime(int index) {
+        return times[index];
     }
 
-    public int getSundayEnd () {
-        return times[7];
-    }
-
-    public int getMondayStart () {
-        return times[1];
-    }
-
-    public int getMondayEnd () {
-        return times[8];
-    }
-
-    public int getTuesdayStart () {
-        return times[2];
-    }
-
-    public int getTuesdayEnd () {
-        return times[9];
-    }
-
-    public int getWednesdayStart () {
-        return times[3];
-    }
-
-    public int getWednesdayEnd () {
-        return times[10];
-    }
-
-    public int getThursdayStart () {
-        return times[4];
-    }
-
-    public int getThursdayEnd () {
-        return times[11];
-    }
-
-    public int getFridayStart () {
-        return times[5];
-    }
-
-    public int getFridayEnd () {
-        return times[12];
-    }
-
-    public int getSaturdayStart () {
-        return times[6];
-    }
-
-    public int getSaturdayEnd () {
-        return times[13];
+    public int[] getTimes() {
+        return times;
     }
 
     // Setters for the hours for each day of the week.
