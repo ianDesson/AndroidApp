@@ -1,6 +1,8 @@
 package com.example.andrew.project;
 
+import com.example.andrew.project.Model.Availability;
 import com.example.andrew.project.Model.Service;
+import com.example.andrew.project.Model.ServiceProvider;
 import com.example.andrew.project.Model.User;
 
 import junit.framework.TestCase;
@@ -32,4 +34,21 @@ public class UnitTests extends TestCase {
         Service service = new Service("painter","bill paints",20.0);
         assertEquals("getName Test", "bill paints",service.getName());
     }
+
+    public void testAvailability(){
+        Availability available = new Availability();
+        available.setMondayStart(9);
+        available.setMondayEnd(5);
+        assertEquals("getTime Test", "9",available.getTime(1));
+        assertEquals("getTime Test", "5",available.getTime(8));
+    }
+
+    public void testServiceInstance(){
+        ServiceProvider service = new ServiceProvider();
+        Service service1 = new Service("painter","bill paints",20.0);
+
+        service.addService(service1);
+        assertEquals("getServices Test", "bill paints",service.getServices().get(0).getName());
+    }
+
 }
