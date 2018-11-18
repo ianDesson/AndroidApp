@@ -1,11 +1,16 @@
 package com.example.andrew.project.Views;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,6 +50,9 @@ public class ServiceProviderServicesView extends AppCompatActivity {
         final ArrayList<String> typesList = new ArrayList<String>();
         final ArrayList<Double> ratesList = new ArrayList<Double>();
 
+        final ListView listView = findViewById(R.id.servicesList);
+
+
 
         databaseReference = FirebaseDatabase.getInstance().getReference("users");
 
@@ -69,13 +77,11 @@ public class ServiceProviderServicesView extends AppCompatActivity {
                 }
 
                 // Set the ListView's Adapter
-                ListView listView = findViewById(R.id.servicesList);
                 final ServiceProviderServicesAdapter adapter = new ServiceProviderServicesAdapter(ServiceProviderServicesView.this, titles, types, rates);
 
                 listView.setAdapter(adapter);
 
                 Intent intent = getIntent();
-                User user = (User) intent.getSerializableExtra("User");
             }
 
             @Override
@@ -84,16 +90,35 @@ public class ServiceProviderServicesView extends AppCompatActivity {
             }
         });
 
-    }
+        final ServiceProvider userTemp = (ServiceProvider) intent.getSerializableExtra("User");
 
-    public void deleteBtn (View view) {
-        LinearLayout viewParentRow = (LinearLayout) view.getParent();
-        LinearLayout textParent = (LinearLayout) viewParentRow.getChildAt(0);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                ServiceProviderServicesAdapter adapter = (ServiceProviderServicesAdapter) listView.getAdapter();
+                final int positionToDelete = position;
+                final String titleOfDeleted = adapter.getTitle(position);
+                // Open the delete dialog
+                AlertDialog.Builder builder = new AlertDialog.Builder(ServiceProviderServicesView.this);
+                builder.setTitle("Delete?");
+                builder.setMessage("Are you sure you want to delete " + titleOfDeleted + "?");
+                builder.setNegativeButton("Cancel", null);
+                builder.setPositiveButton("Delete", new AlertDialog.OnClickListener() {
 
-        TextView titleText = (TextView) textParent.getChildAt(0);
-        String serviceName = titleText.getText().toString().trim();
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Delete data here
+                        DatabaseReference db = FirebaseDatabase.getInstance().getReference("users");
+                        
+                        db.child("serviceProviders").child(userTemp.getUsername()).child("services").setValue(userTemp.getServices());
+                        Intent intent = new Intent(ServiceProviderServicesView.this, WelcomeScreen.class);
+                        intent.putExtra("User", userTemp);
+                        startActivity(intent);
+                    }
+                });
+                builder.show();
 
-        // Delete stuff here
+            }
+        });
 
     }
 
@@ -146,7 +171,7 @@ public class ServiceProviderServicesView extends AppCompatActivity {
             inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
             if (rowView == null)
-                rowView = inflater.inflate(R.layout.service_row, null);
+                rowView = inflater.inflate(R.layout.service_provider_service_row, null);
 
             TextView titleText = rowView.findViewById(R.id.title);
             titleText.setText(titles[position]);
