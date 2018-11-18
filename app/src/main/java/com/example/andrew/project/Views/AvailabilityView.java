@@ -8,14 +8,14 @@ import com.example.andrew.project.R;
 public class AvailabilityView extends AppCompatActivity {
 
     @Override
-    public void oncreate(Bundle savedInstanceState){
+    public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.availability);
-
+        
 
     }
 
-    
+
 
 
 }
