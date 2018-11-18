@@ -52,18 +52,30 @@ public class WelcomeScreen extends AppCompatActivity{
 
     public void srcvViewBtn (View view) {
         // Button that will open the Activity allowing the Service Provider to view their Services
+        Intent intent = new Intent(WelcomeScreen.this, ServiceProviderServicesView.class);
+        intent.putExtra("User", user);
+        startActivity(intent);
     }
 
     public void srcvAddBtn (View view) {
         // Button that will open the Activity allowing the Service Provider to add to their Services
+        //Intent intent = new Intent(WelcomeScreen.this, <Change to correct class name>);
+        //intent.putExtra("User", user);
+        //startActivity(intent);
     }
 
     public void avlViewBtn (View view) {
-        // Button that will open the Activity containing all of the Service Provider's avilabilities
+        // Button that will open the Activity containing all of the Service Provider's availabilities
+        //Intent intent = new Intent(WelcomeScreen.this, <Change to correct class name>);
+        //intent.putExtra("User", user);
+        //startActivity(intent);
     }
 
     public void avlEditBtn (View view) {
         // Button that will open the Activity that will edit availabilities
+        //Intent intent = new Intent(WelcomeScreen.this, <Change to correct class name>);
+        //intent.putExtra("User", user);
+        //startActivity(intent);
 
     }
 

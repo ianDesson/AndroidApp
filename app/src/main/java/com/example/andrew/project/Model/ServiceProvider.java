@@ -1,14 +1,22 @@
 package com.example.andrew.project.Model;
 
+import java.util.ArrayList;
+
 public class ServiceProvider extends User {
 
     private String companyName, phoneNumber, description;
     private boolean isLicensed;
+    private ArrayList<Service> services;
 
     public ServiceProvider() {
         super(null, null, null);
         companyName = null; phoneNumber = null; description = null;
         isLicensed = false;
+        services = new ArrayList<>();
+    }
+
+    public void addService (Service service) {
+        services.add(service);
     }
 
     public void setCompanyName (String companyName) {
@@ -38,6 +46,14 @@ public class ServiceProvider extends User {
 
     public String getDescription () {
         return description;
+    }
+
+    public ArrayList<Service> getServices () {
+        return services;
+    }
+
+    public void removeService (Service service) {
+        services.remove(service);
     }
 
     public boolean isLicensed() {

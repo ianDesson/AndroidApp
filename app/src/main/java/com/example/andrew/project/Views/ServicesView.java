@@ -3,10 +3,10 @@ package com.example.andrew.project.Views;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import com.example.andrew.project.Model.Admin;
 import com.example.andrew.project.Model.Service;
+import com.example.andrew.project.Model.ServiceProvider;
 import com.example.andrew.project.R;
 
 import com.example.andrew.project.Model.User;
@@ -70,11 +71,11 @@ public class ServicesView extends AppCompatActivity {
                 listView.setAdapter(adapter);
 
                 Intent intent = getIntent();
-                User user = (User) intent.getSerializableExtra("User");
+                final User user = (User) intent.getSerializableExtra("User");
 
                 if (user instanceof Admin) {
 
-                    // Add the ability to click on a listed service (only admins can)
+                    // Add the ability to click on a listed service for editing (only admins can)
                     listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
                         @Override
@@ -91,6 +92,28 @@ public class ServicesView extends AppCompatActivity {
                     // Make the Action button visible
                     FloatingActionButton actionButton = findViewById(R.id.floatingActionButton2);
                     actionButton.show();
+                } else if (user instanceof ServiceProvider) {
+
+                    // Add the ability to click on a listed service to add it to a Service Providers' service
+                    listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                            // Create the new Service
+                            Service newService = new Service(adapter.getType(position),
+                                    adapter.getTitle(position), adapter.getRate(position));
+                            ServiceProvider temp = (ServiceProvider) user;
+                            // Add it to the user
+                            temp.addService(newService);
+                            // Get a reference to Firebase
+                            DatabaseReference userReference = FirebaseDatabase.getInstance().getReference("users");
+                            // Push the updated list of services
+                            userReference.child("serviceProviders").child(temp.getUsername()).child("services").setValue(temp.getServices());
+                            Intent intent = new Intent(ServicesView.this, WelcomeScreen.class);
+                            intent.putExtra("User", temp);
+                            startActivity(intent);
+                        }
+                    });
                 }
             }
 
@@ -105,9 +128,6 @@ public class ServicesView extends AppCompatActivity {
         startActivity(new Intent(ServicesView.this, NewService.class));
 
     }
-
-
-
 
     class ServicesAdapter extends BaseAdapter {
         Context context;
