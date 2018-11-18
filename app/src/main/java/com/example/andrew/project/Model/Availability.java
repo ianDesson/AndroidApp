@@ -1,5 +1,8 @@
 package com.example.andrew.project.Model;
 
+import android.view.View;
+import android.widget.Button;
+
 import java.io.Serializable;
 
 public class Availability implements Serializable {
@@ -77,7 +80,5 @@ public class Availability implements Serializable {
     public void setSundayEnd (int time) {
         times[13] = time;
     }
-
-
 
 }
