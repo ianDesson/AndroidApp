@@ -57,7 +57,11 @@ public class ServiceProviderRegistration extends AppCompatActivity {
         user.setDescription(description);
         user.setLicensed(isLicensed);
 
-        mDatabase.child("users").child("serviceProviders").child(user.getUsername()).setValue(user);
+        mDatabase.child("users").child("serviceProviders").child(user.getUsername()).child("extraInfo").setValue(user);
+
+        Intent intent = new Intent(ServiceProviderRegistration.this, WelcomeScreen.class);
+        intent.putExtra("User", user);
+        startActivity(intent);
 
     }
 
@@ -68,6 +72,7 @@ public class ServiceProviderRegistration extends AppCompatActivity {
         if (compName.isEmpty()) {
             compNameText.setError("Company Name cannot be empty");
         }
+
 
         return true;
     }

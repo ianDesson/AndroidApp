@@ -13,16 +13,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Company Name" />
+            android:hint="Company Name"
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/pNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="phone"
-            android:text="Phone Number" />
+            android:hint="Phone Number"
+            android:inputType="phone" />
 
         <CheckBox
             android:id="@+id/licensedBox"
@@ -36,9 +36,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="Description (Optional)"
             android:inputType="textMultiLine"
-            android:text="Description (Optional)"
-            android:maxLength="150"/>
+            android:maxLength="150" />
 
         <Button
             android:id="@+id/nextBtn"

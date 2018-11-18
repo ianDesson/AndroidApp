@@ -9,7 +9,10 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.andrew.project.Model.Availability;
+import com.example.andrew.project.Model.ServiceProvider;
 import com.example.andrew.project.R;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class AvailabilityView extends AppCompatActivity {
 
@@ -19,6 +22,7 @@ public class AvailabilityView extends AppCompatActivity {
 
     Availability avail;
 
+    ServiceProvider user;
     Intent intent;
     Intent intent2;
 
@@ -37,6 +41,7 @@ public class AvailabilityView extends AppCompatActivity {
 
 
         intent = getIntent();
+        user = (ServiceProvider) intent.getSerializableExtra("User");
         intent2 = new Intent(AvailabilityView.this,  ServicesView.class);
         saveChangesButton = findViewById(R.id.AvailabilitySaveChangesButton);
 
@@ -44,9 +49,15 @@ public class AvailabilityView extends AppCompatActivity {
 
     public void saveChangesButton(View view){
 
+
         avail = new Availability();
        /*
-        avail.setSaturdayStart();
+        if (saturdayCheckbox.isChecked()) {
+            avail.setSaturdayStart(Integer.parseInt(textViewSat.getText().toString().trim()));
+        } else {
+            avail.setSaturdayStart(-1);
+            avail.setSaturdayEnd(-1);
+        }
         avail.setSaturdayEnd();
         avail.setSundayStart();
         avail.setSundayEnd();
@@ -61,6 +72,10 @@ public class AvailabilityView extends AppCompatActivity {
         avail.setFridayStart();
         avail.setFridayEnd();
         */
+
+       // Save to database
+        DatabaseReference db = FirebaseDatabase.getInstance().getReference("users");
+        db.child("serviceProviders").child(user.getUsername()).child("availabilty").setValue(avail);
 
     }
 

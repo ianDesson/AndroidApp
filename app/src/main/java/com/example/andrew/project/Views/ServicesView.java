@@ -108,7 +108,8 @@ public class ServicesView extends AppCompatActivity {
                             // Get a reference to Firebase
                             DatabaseReference userReference = FirebaseDatabase.getInstance().getReference("users");
                             // Push the updated list of services
-                            userReference.child("serviceProviders").child(temp.getUsername()).child("services").setValue(temp.getServices());
+                            userReference.child("serviceProviders").child(temp.getUsername())
+                                    .child("services").child(newService.getName()).setValue(temp.getServices());
                             Intent intent = new Intent(ServicesView.this, WelcomeScreen.class);
                             intent.putExtra("User", temp);
                             startActivity(intent);

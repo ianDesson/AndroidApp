@@ -43,7 +43,7 @@
                         android:layout_height="wrap_content"
                         android:onClick="createAdmin"
                         android:text="Admin"
-                        android:visibility="visible"
+                        android:visibility="invisible"
                         tools:layout_editor_absoluteX="16dp"
                         tools:layout_editor_absoluteY="191dp" />
 

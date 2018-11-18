@@ -35,6 +35,9 @@ public class Registration extends AppCompatActivity {
                 if (dataSnapshot.child("admin").getValue() != null) {
                     Button adminBtn = findViewById(R.id.btn1);
                     adminBtn.setVisibility(View.GONE);
+                } else {
+                    Button adminBtn = findViewById(R.id.btn1);
+                    adminBtn.setVisibility(View.VISIBLE);
                 }
             }
 
