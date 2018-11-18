@@ -25,11 +25,11 @@ public class Availability implements Serializable {
 
     // Setters for the hours for each day of the week.
     // times[0-6] are the start times and times[7-13] are the end times
-    public void setSaturdayStart (int time) {
+    public void setSundayStart (int time) {
         times[0] = time;
     }
 
-    public void setSaturdayEnd (int time) {
+    public void setSundayEnd (int time) {
         times[7] = time;
     }
 
@@ -73,11 +73,11 @@ public class Availability implements Serializable {
         times[12] = time;
     }
 
-    public void setSundayStart (int time) {
+    public void setSaturdayStart (int time) {
         times[6] = time;
     }
 
-    public void setSundayEnd (int time) {
+    public void setSaturdayEnd (int time) {
         times[13] = time;
     }
 

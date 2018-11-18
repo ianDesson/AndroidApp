@@ -14,13 +14,8 @@ import com.example.andrew.project.R;
 public class AvailabilityView extends AppCompatActivity {
 
     Button saveChangesButton;
-    EditText textViewSat = findViewById(R.id.editTextSaturday);
-    EditText textViewSun = findViewById(R.id.editTextSunday);
-    EditText textViewMon = findViewById(R.id.editTextMonday);
-    EditText textViewTue = findViewById(R.id.editTextTuesday);
-    EditText textViewWed = findViewById(R.id.editTextWednesday);
-    EditText textViewThu = findViewById(R.id.editTextThursday);
-    EditText textViewFri = findViewById(R.id.editTextFriday);
+    EditText textViewSat; EditText textViewSun; EditText textViewMon; EditText textViewTue;
+    EditText textViewWed; EditText textViewThu; EditText textViewFri;
 
     Availability avail;
 
@@ -31,6 +26,16 @@ public class AvailabilityView extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.availability);
+
+        textViewSat = findViewById(R.id.editTextSaturday);
+        textViewSun = findViewById(R.id.editTextSunday);
+        textViewMon = findViewById(R.id.editTextMonday);
+        textViewTue = findViewById(R.id.editTextTuesday);
+        textViewWed = findViewById(R.id.editTextWednesday);
+        textViewThu = findViewById(R.id.editTextThursday);
+        textViewFri = findViewById(R.id.editTextFriday);
+
+
         intent = getIntent();
         intent2 = new Intent(AvailabilityView.this,  ServicesView.class);
         saveChangesButton = findViewById(R.id.AvailabilitySaveChangesButton);
@@ -38,6 +43,8 @@ public class AvailabilityView extends AppCompatActivity {
     }
 
     public void saveChangesButton(View view){
+
+        avail = new Availability();
        /*
         avail.setSaturdayStart();
         avail.setSaturdayEnd();
