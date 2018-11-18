@@ -43,4 +43,10 @@ public class Service implements Serializable {
     public double getRate() {
         return rate;
     }
+
+    public boolean equals(Service other) {
+        return getType() == other.getType() &&
+                getName() == other.getName() &&
+                getRate() == other.getRate();
+    }
 }

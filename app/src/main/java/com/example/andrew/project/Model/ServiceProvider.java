@@ -56,6 +56,17 @@ public class ServiceProvider extends User {
         services.remove(service);
     }
 
+    public void removeService (String name) {
+        Service toRemove = new Service();
+        for (Service service : services) {
+            if (service.getName() == name) {
+                toRemove = service;
+                break;
+            }
+        }
+        services.remove(toRemove);
+    }
+
     public boolean isLicensed() {
         return isLicensed;
     }
