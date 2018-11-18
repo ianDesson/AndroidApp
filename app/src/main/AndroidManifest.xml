@@ -51,7 +51,12 @@
                 <action android:name="android.intent.action.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".Views.serviceProviderRegistration">
+        <activity android:name=".Views.ServiceProviderRegistration">
+            <intent-filter>
+                <action android:name="android.intent.action.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Views.ServiceProviderServicesView">
             <intent-filter>
                 <action android:name="android.intent.action.DEFAULT" />
             </intent-filter>

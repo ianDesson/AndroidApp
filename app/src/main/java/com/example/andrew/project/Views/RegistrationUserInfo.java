@@ -124,7 +124,7 @@ public class RegistrationUserInfo extends AppCompatActivity {
         user.setPassword(password);
         Intent intent;
         if (user instanceof ServiceProvider)
-            intent = new Intent(RegistrationUserInfo.this, serviceProviderRegistration.class);
+            intent = new Intent(RegistrationUserInfo.this, ServiceProviderRegistration.class);
         else
             intent = new Intent(RegistrationUserInfo.this, WelcomeScreen.class);
 
