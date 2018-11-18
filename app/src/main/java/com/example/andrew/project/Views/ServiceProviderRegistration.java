@@ -12,7 +12,7 @@ import com.example.andrew.project.R;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class serviceProviderRegistration extends AppCompatActivity {
+public class ServiceProviderRegistration extends AppCompatActivity {
 
     private EditText compNameText, pNumberText, descText;
     private CheckBox isLicensedBox;
