@@ -11,7 +11,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7c89104d-d476-4000-bdbf-7b4b4d8e7d5b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/andrew/project/Views/AvailabilityView.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/andrew/project/Views/AvailabilityView.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/availability.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/availability.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -62,8 +61,8 @@
       <file leaf-file-name="AvailabilityView.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/andrew/project/Views/AvailabilityView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="40" column="33" lean-forward="true" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
+            <state relative-caret-position="838">
+              <caret line="55" column="10" lean-forward="false" selection-start-line="55" selection-start-column="10" selection-end-line="55" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -3152,8 +3151,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/andrew/project/Views/AvailabilityView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="40" column="33" lean-forward="true" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
+        <state relative-caret-position="838">
+          <caret line="55" column="10" lean-forward="false" selection-start-line="55" selection-start-column="10" selection-end-line="55" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

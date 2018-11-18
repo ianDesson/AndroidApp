@@ -38,6 +38,7 @@ public class AvailabilityView extends AppCompatActivity {
     }
 
     public void saveChangesButton(View view){
+       /*
         avail.setSaturdayStart();
         avail.setSaturdayEnd();
         avail.setSundayStart();
@@ -52,6 +53,7 @@ public class AvailabilityView extends AppCompatActivity {
         avail.setThursdayEnd();
         avail.setFridayStart();
         avail.setFridayEnd();
+        */
 
     }
 
