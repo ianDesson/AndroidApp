@@ -14,7 +14,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c89104d-d476-4000-bdbf-7b4b4d8e7d5b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/availability.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/availability.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/andrew/project/Views/AvailabilityView.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/andrew/project/Views/AvailabilityView.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,7 +37,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="availability.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="availability.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/availability.xml">
           <provider selected="true" editor-type-id="android-designer2">
             <state />
@@ -45,6 +45,38 @@
           <provider editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AvailabilityView.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/andrew/project/Views/AvailabilityView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="17" column="57" lean-forward="false" selection-start-line="17" selection-start-column="57" selection-end-line="17" selection-end-column="57" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EditService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/andrew/project/Views/EditService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-153">
+              <caret line="21" column="40" lean-forward="true" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AvailabilityListView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/andrew/project/Views/AvailabilityListView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -2360,7 +2392,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/andrew/project/Views/ServiceProviderRegistration.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_registration.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/andrew/project/Views/Registration.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/andrew/project/Views/AvailabilityView.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/andrew/project/Views/WelcomeScreen.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/service_provider_service_row.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/andrew/project/Model/Service.java" />
@@ -2369,6 +2400,7 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/andrew/project/Views/ServiceProviderServicesView.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/andrew/project/Model/ServiceProvider.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/availability.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/andrew/project/Views/AvailabilityView.java" />
       </list>
     </option>
   </component>
@@ -2874,13 +2906,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/andrew/project/Views/EditService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/service_edit.xml">
       <provider selected="true" editor-type-id="android-designer2">
         <state />
@@ -2895,6 +2920,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="675">
           <caret line="77" column="5" lean-forward="true" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2928,7 +2956,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/andrew/project/Views/AvailabilityListView.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/service_row.xml">
       <provider editor-type-id="android-designer2">
         <state />
@@ -2955,13 +2982,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="38" column="62" lean-forward="true" selection-start-line="38" selection-start-column="62" selection-end-line="38" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/andrew/project/Views/AvailabilityView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="60" column="31" lean-forward="false" selection-start-line="60" selection-start-column="31" selection-end-line="60" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -3068,6 +3088,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/andrew/project/Views/AvailabilityListView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/availability.xml">
       <provider selected="true" editor-type-id="android-designer2">
         <state />
@@ -3076,6 +3104,24 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/andrew/project/Views/EditService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-153">
+          <caret line="21" column="40" lean-forward="true" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/andrew/project/Views/AvailabilityView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="17" column="57" lean-forward="false" selection-start-line="17" selection-start-column="57" selection-end-line="17" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
