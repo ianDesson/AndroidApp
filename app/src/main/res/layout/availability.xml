@@ -30,39 +30,50 @@
             android:textSize="40sp" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="0"
             android:orientation="horizontal"
             tools:layout_editor_absoluteY="567dp">
 
             <TextView
                 android:id="@+id/textViewMonday"
                 android:layout_width="134dp"
-                android:layout_height="41dp"
-                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
                 android:text="Monday"
                 android:textSize="24sp" />
 
             <EditText
                 android:id="@+id/editTextMonday"
-                android:layout_width="106dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="Timing" />
+                android:text="Start" />
+
+            <EditText
+                android:id="@+id/editTextMondayEnd"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="End" />
 
             <CheckBox
                 android:id="@+id/checkBoxMonday"
-                android:layout_width="121dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0"
                 android:text="Available" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="0"
             android:orientation="horizontal"
             tools:layout_editor_absoluteY="567dp">
 
@@ -70,24 +81,33 @@
                 android:id="@+id/textViewTuesday"
                 android:layout_width="134dp"
                 android:layout_height="41dp"
-                android:layout_weight="1"
+                android:layout_weight="0"
                 android:text="Tuesday"
                 android:textSize="24sp" />
 
             <EditText
                 android:id="@+id/editTextTuesday"
-                android:layout_width="106dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="Timing" />
+                android:text="Start" />
+
+            <EditText
+                android:id="@+id/editTextTuesdayEnd"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="End" />
 
             <CheckBox
                 android:id="@+id/checkBoxTuesday"
-                android:layout_width="121dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0"
                 android:text="Available" />
 
         </LinearLayout>
@@ -95,6 +115,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="0"
             android:orientation="horizontal"
             tools:layout_editor_absoluteY="567dp">
 
@@ -102,24 +123,33 @@
                 android:id="@+id/textViewWednesday"
                 android:layout_width="134dp"
                 android:layout_height="41dp"
-                android:layout_weight="1"
+                android:layout_weight="0"
                 android:text="Wednesday"
                 android:textSize="24sp" />
 
             <EditText
                 android:id="@+id/editTextWednesday"
-                android:layout_width="106dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="Timing" />
+                android:text="Start" />
+
+            <EditText
+                android:id="@+id/editTextWednesdayEnd"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="End" />
 
             <CheckBox
                 android:id="@+id/checkBoxWednesday"
-                android:layout_width="121dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0"
                 android:text="Available" />
 
         </LinearLayout>
@@ -127,6 +157,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="0"
             android:orientation="horizontal"
             tools:layout_editor_absoluteX="10dp"
             tools:layout_editor_absoluteY="567dp">
@@ -135,30 +166,40 @@
                 android:id="@+id/textViewThursday"
                 android:layout_width="134dp"
                 android:layout_height="41dp"
-                android:layout_weight="1"
+                android:layout_weight="0"
                 android:text="Thursday"
                 android:textSize="24sp" />
 
             <EditText
                 android:id="@+id/editTextThursday"
-                android:layout_width="106dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="Timing" />
+                android:text="Start" />
+
+            <EditText
+                android:id="@+id/editTextThursdayEnd"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="End" />
 
             <CheckBox
                 android:id="@+id/checkBoxThursday"
-                android:layout_width="121dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0"
                 android:text="Available" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="0"
             android:orientation="horizontal"
             tools:layout_editor_absoluteY="567dp">
 
@@ -166,29 +207,40 @@
                 android:id="@+id/textViewFriday"
                 android:layout_width="134dp"
                 android:layout_height="41dp"
+                android:layout_weight="0"
                 android:text="Friday"
                 android:textSize="24sp" />
 
             <EditText
                 android:id="@+id/editTextFriday"
-                android:layout_width="106dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="Timing" />
+                android:text="Start" />
+
+            <EditText
+                android:id="@+id/editTextFridayEnd"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="End" />
 
             <CheckBox
                 android:id="@+id/checkBoxFriday"
-                android:layout_width="121dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0"
                 android:text="Available" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="0"
             android:orientation="horizontal"
             tools:layout_editor_absoluteY="567dp">
 
@@ -196,29 +248,40 @@
                 android:id="@+id/textViewSaturday"
                 android:layout_width="134dp"
                 android:layout_height="41dp"
+                android:layout_weight="0"
                 android:text="Saturday"
                 android:textSize="24sp" />
 
             <EditText
                 android:id="@+id/editTextSaturday"
-                android:layout_width="106dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="Timing" />
+                android:text="Start" />
+
+            <EditText
+                android:id="@+id/editTextSaturdayEnd"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="End" />
 
             <CheckBox
                 android:id="@+id/checkBoxSaturday"
-                android:layout_width="121dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0"
                 android:text="Available" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="0"
             android:orientation="horizontal"
             tools:layout_editor_absoluteY="567dp">
 
@@ -226,23 +289,33 @@
                 android:id="@+id/textViewSunday"
                 android:layout_width="134dp"
                 android:layout_height="41dp"
+                android:layout_weight="0"
                 android:text="Sunday"
                 android:textSize="24sp" />
 
             <EditText
                 android:id="@+id/editTextSunday"
-                android:layout_width="106dp"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="Timing" />
+                android:text="Start" />
+
+            <EditText
+                android:id="@+id/editTextSundayEnd"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="End" />
 
             <CheckBox
                 android:id="@+id/checkBoxSunday"
-                android:layout_width="121dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0"
                 android:text="Available" />
         </LinearLayout>
 
