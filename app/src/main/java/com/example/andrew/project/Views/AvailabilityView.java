@@ -85,7 +85,7 @@ public class AvailabilityView extends AppCompatActivity {
 
         intent = getIntent();
         user = (ServiceProvider) intent.getSerializableExtra("User");
-        intent2 = new Intent(AvailabilityView.this, ServicesView.class);
+        intent2 = new Intent(AvailabilityView.this, WelcomeScreen.class);
         saveChangesButton = findViewById(R.id.AvailabilitySaveChangesButton);
 
     }
@@ -443,7 +443,7 @@ public class AvailabilityView extends AppCompatActivity {
         // Save to database
         user.setAvailability(avail);
         DatabaseReference db = FirebaseDatabase.getInstance().getReference("users");
-        db.child("serviceProviders").child(user.getUsername()).setValue(user);
+        db.child("serviceProviders").child(user.getUsername()).child("availability").setValue(avail);
 
         startActivity(intent2);
     }
