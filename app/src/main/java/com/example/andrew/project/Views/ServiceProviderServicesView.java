@@ -108,7 +108,7 @@ public class ServiceProviderServicesView extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         // Delete data here
                         DatabaseReference db = FirebaseDatabase.getInstance().getReference("users");
-                        
+                        user.removeService(user.getService(positionToDelete));
                         db.child("serviceProviders").child(userTemp.getUsername()).child("services").setValue(userTemp.getServices());
                         Intent intent = new Intent(ServiceProviderServicesView.this, WelcomeScreen.class);
                         intent.putExtra("User", userTemp);

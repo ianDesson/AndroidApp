@@ -52,6 +52,10 @@ public class ServiceProvider extends User {
         return services;
     }
 
+    public Service getService (int i){
+        return services.get(i);
+    }
+
     public void removeService (Service service) {
         services.remove(service);
     }
