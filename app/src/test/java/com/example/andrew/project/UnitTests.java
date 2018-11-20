@@ -39,8 +39,8 @@ public class UnitTests extends TestCase {
         Availability available = new Availability();
         available.setMondayStart(9);
         available.setMondayEnd(5);
-        assertEquals("getTime Test", "9",available.getTime(1));
-        assertEquals("getTime Test", "5",available.getTime(8));
+        assertEquals("getTime Test", 9,available.getTime(1));
+        assertEquals("getTime Test", 5,available.getTime(8));
     }
 
     public void testServiceInstance(){
