@@ -1,10 +1,11 @@
 #  On-Demand Home Repair Services App
 This is the Android App repo used for our SEG group project to design an On-Demand Home Repair Services App.
 https://github.com/ianDesson/AndroidApp
-## Login Credentials
+## Testing Information
 ```
 Username: admin123
 Password androidAdmin123
+All tests were performed using the Nexus 6 emulator with Android 9, API 28
 ```
 ## Contributors (in alphabetical order):
 ```
