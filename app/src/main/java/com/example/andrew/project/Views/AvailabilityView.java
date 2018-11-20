@@ -20,6 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class AvailabilityView extends AppCompatActivity {
 
     Button saveChangesButton;
+    DatabaseReference db;
 
     //Start times
     EditText textViewSat;
@@ -475,7 +476,7 @@ public class AvailabilityView extends AppCompatActivity {
         }
         //Saturday
         if (checkBoxSat.isChecked()) {
-            if (validateSunday()) {
+            if (validateSaturday()) {
                 avail.setSaturdayStart(Integer.parseInt(textViewSat.getText().toString().trim()));
                 avail.setSaturdayEnd(Integer.parseInt(textViewSatEnd.getText().toString().trim()));
             } else {
@@ -489,9 +490,8 @@ public class AvailabilityView extends AppCompatActivity {
 
         // Save to database
         user.setAvailability(avail);
-        DatabaseReference db = FirebaseDatabase.getInstance().getReference("users");
+        db = FirebaseDatabase.getInstance().getReference("users");
         db.child("serviceProviders").child(user.getUsername()).child("availability").setValue(user.getAvailability());
-
         startActivity(intent2);
     }
 
