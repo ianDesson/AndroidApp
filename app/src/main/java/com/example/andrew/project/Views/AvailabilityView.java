@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -393,15 +394,16 @@ public class AvailabilityView extends AppCompatActivity {
 
     public void saveChangesButton(View view) {
 
-        if (!validateMonday() | !validateTuesday() | !validateWednesday() | !validateThursday() | !validateFriday() | !validateSaturday() | !validateSunday()) {
-            return;
-        }
         avail = new Availability();
 
         //Sunday
         if (checkBoxSun.isChecked()) {
-            avail.setSundayStart(Integer.parseInt(textViewSun.getText().toString().trim()));
-            avail.setSundayEnd(Integer.parseInt(textViewSunEnd.getText().toString().trim()));
+            if (validateSunday()) {
+                avail.setSundayStart(Integer.parseInt(textViewSun.getText().toString().trim()));
+                avail.setSundayEnd(Integer.parseInt(textViewSunEnd.getText().toString().trim()));
+            } else {
+                return;
+            }
         } else {
             avail.setSundayStart(-1);
             avail.setSundayEnd(-1);
@@ -409,8 +411,12 @@ public class AvailabilityView extends AppCompatActivity {
 
         //Monday
         if (checkBoxMon.isChecked()) {
-            avail.setMondayStart(Integer.parseInt(textViewMon.getText().toString().trim()));
-            avail.setMondayEnd(Integer.parseInt(textViewMonEnd.getText().toString().trim()));
+            if (validateMonday()) {
+                avail.setMondayStart(Integer.parseInt(textViewMon.getText().toString().trim()));
+                avail.setMondayEnd(Integer.parseInt(textViewMonEnd.getText().toString().trim()));
+            } else {
+                return;
+            }
         } else {
             avail.setMondayStart(-1);
             avail.setMondayEnd(-1);
@@ -418,8 +424,12 @@ public class AvailabilityView extends AppCompatActivity {
 
         //Tuesday
         if (checkBoxTue.isChecked()) {
-            avail.setTuesdayStart(Integer.parseInt(textViewTue.getText().toString().trim()));
-            avail.setTuesdayEnd(Integer.parseInt(textViewTueEnd.getText().toString().trim()));
+            if (validateTuesday()) {
+                avail.setTuesdayStart(Integer.parseInt(textViewTue.getText().toString().trim()));
+                avail.setTuesdayEnd(Integer.parseInt(textViewTueEnd.getText().toString().trim()));
+            } else {
+                return;
+            }
         } else {
             avail.setTuesdayStart(-1);
             avail.setTuesdayEnd(-1);
@@ -427,8 +437,12 @@ public class AvailabilityView extends AppCompatActivity {
 
         //Wednesday
         if (checkBoxWed.isChecked()) {
-            avail.setWednesdayStart(Integer.parseInt(textViewWed.getText().toString().trim()));
-            avail.setWednesdayEnd(Integer.parseInt(textViewWedEnd.getText().toString().trim()));
+            if (validateWednesday()) {
+                avail.setWednesdayStart(Integer.parseInt(textViewWed.getText().toString().trim()));
+                avail.setWednesdayEnd(Integer.parseInt(textViewWedEnd.getText().toString().trim()));
+            } else {
+                return;
+            }
         } else {
             avail.setWednesdayStart(-1);
             avail.setWednesdayEnd(-1);
@@ -436,8 +450,12 @@ public class AvailabilityView extends AppCompatActivity {
 
         //Thursday
         if (checkBoxThu.isChecked()) {
-            avail.setThursdayStart(Integer.parseInt(textViewThu.getText().toString().trim()));
-            avail.setThursdayEnd(Integer.parseInt(textViewThuEnd.getText().toString().trim()));
+            if (validateThursday()) {
+                avail.setThursdayStart(Integer.parseInt(textViewThu.getText().toString().trim()));
+                avail.setThursdayEnd(Integer.parseInt(textViewThuEnd.getText().toString().trim()));
+            } else {
+                return;
+            }
         } else {
             avail.setThursdayStart(-1);
             avail.setThursdayEnd(-1);
@@ -445,16 +463,24 @@ public class AvailabilityView extends AppCompatActivity {
 
         //Friday
         if (checkBoxFri.isChecked()) {
-            avail.setFridayStart(Integer.parseInt(textViewFri.getText().toString().trim()));
-            avail.setFridayEnd(Integer.parseInt(textViewFriEnd.getText().toString().trim()));
+            if (validateFriday()) {
+                avail.setFridayStart(Integer.parseInt(textViewFri.getText().toString().trim()));
+                avail.setFridayEnd(Integer.parseInt(textViewFriEnd.getText().toString().trim()));
+            } else {
+                return;
+            }
         } else {
             avail.setFridayStart(-1);
             avail.setFridayEnd(-1);
         }
         //Saturday
         if (checkBoxSat.isChecked()) {
-            avail.setSaturdayStart(Integer.parseInt(textViewSat.getText().toString().trim()));
-            avail.setSaturdayEnd(Integer.parseInt(textViewSatEnd.getText().toString().trim()));
+            if (validateSunday()) {
+                avail.setSaturdayStart(Integer.parseInt(textViewSat.getText().toString().trim()));
+                avail.setSaturdayEnd(Integer.parseInt(textViewSatEnd.getText().toString().trim()));
+            } else {
+                return;
+            }
         } else {
             avail.setSaturdayStart(-1);
             avail.setSaturdayEnd(-1);
