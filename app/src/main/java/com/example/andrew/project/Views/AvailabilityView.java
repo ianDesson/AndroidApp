@@ -123,22 +123,8 @@ public class AvailabilityView extends AppCompatActivity {
         if(!validateMonday()){
             return;
         }
-        String input = "Monday" + "test1.0validation";
-        Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
-
-
-
-
+        
         avail = new Availability();
-
-        //Saturday
-        if (checkBoxSat.isChecked()) {
-            avail.setSaturdayStart(Integer.parseInt(textViewSat.getText().toString().trim()));
-            avail.setSaturdayEnd(Integer.parseInt(textViewSatEnd.getText().toString().trim()));
-        } else {
-            avail.setSaturdayStart(-1);
-            avail.setSaturdayEnd(-1);
-        }
 
         //Sunday
         if (checkBoxSun.isChecked()) {
@@ -193,10 +179,20 @@ public class AvailabilityView extends AppCompatActivity {
             avail.setFridayStart(-1);
             avail.setFridayEnd(-1);
         }
+        //Saturday
+        if (checkBoxSat.isChecked()) {
+            avail.setSaturdayStart(Integer.parseInt(textViewSat.getText().toString().trim()));
+            avail.setSaturdayEnd(Integer.parseInt(textViewSatEnd.getText().toString().trim()));
+        } else {
+            avail.setSaturdayStart(-1);
+            avail.setSaturdayEnd(-1);
+        }
+
 
         // Save to database
+        user.setAvailability(avail);
         DatabaseReference db = FirebaseDatabase.getInstance().getReference("users");
-        db.child("serviceProviders").child(user.getUsername()).child("availabilty").setValue(avail);
+        db.child("serviceProviders").child(user.getUsername()).setValue(user);
 
         startActivity(intent2);
     }

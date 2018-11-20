@@ -7,6 +7,7 @@ public class ServiceProvider extends User {
     private String companyName, phoneNumber, description;
     private boolean isLicensed;
     private ArrayList<Service> services;
+    private Availability availability;
 
     public ServiceProvider() {
         super(null, null, null);
@@ -33,6 +34,10 @@ public class ServiceProvider extends User {
 
     public void setLicensed (boolean licensed) {
         this.isLicensed = licensed;
+    }
+
+    public void setAvailability (Availability availability) {
+        this.availability = availability;
     }
 
 
@@ -69,6 +74,10 @@ public class ServiceProvider extends User {
             }
         }
         services.remove(toRemove);
+    }
+
+    public Availability getAvailability() {
+        return availability;
     }
 
     public boolean isLicensed() {
