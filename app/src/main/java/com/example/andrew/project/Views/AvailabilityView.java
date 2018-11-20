@@ -443,7 +443,7 @@ public class AvailabilityView extends AppCompatActivity {
         // Save to database
         user.setAvailability(avail);
         DatabaseReference db = FirebaseDatabase.getInstance().getReference("users");
-        db.child("serviceProviders").child(user.getUsername()).child("availability").setValue(avail);
+        db.child("serviceProviders").child(user.getUsername()).child("availability").setValue(user.getAvailability());
 
         startActivity(intent2);
     }
