@@ -492,6 +492,7 @@ public class AvailabilityView extends AppCompatActivity {
         user.setAvailability(avail);
         db = FirebaseDatabase.getInstance().getReference("users");
         db.child("serviceProviders").child(user.getUsername()).child("availability").setValue(user.getAvailability());
+        intent.putExtra("User", user);
         startActivity(intent2);
     }
 
