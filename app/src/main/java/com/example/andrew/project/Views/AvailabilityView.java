@@ -93,8 +93,6 @@ public class AvailabilityView extends AppCompatActivity {
     private boolean validateMonday() {
         String mondayStartStr = textViewMon.getText().toString().trim();
         String mondayEndStr = textViewMonEnd.getText().toString().trim();
-        int mondayStart = Integer.parseInt(textViewMon.getText().toString().trim());
-        int mondayEnd = Integer.parseInt(textViewMonEnd.getText().toString().trim());
 
         String input;
 
@@ -108,7 +106,12 @@ public class AvailabilityView extends AppCompatActivity {
             input = "Cannot input an empty field.";
             Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
             return false;
-        } else if (mondayStart > 24) {
+        }
+
+        int mondayStart = Integer.parseInt(textViewMon.getText().toString().trim());
+        int mondayEnd = Integer.parseInt(textViewMonEnd.getText().toString().trim());
+
+        if (mondayStart > 24) {
             textViewMon.setError("Must be 0-24h");
             input = "Must input an hour 0-24";
             Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
@@ -372,7 +375,7 @@ public class AvailabilityView extends AppCompatActivity {
 
     public void saveChangesButton(View view) {
 
-        if(!validateMonday()|!validateTuesday()|!validateWednesday()|!validateThursday()|!validateFriday()|!validateSaturday()|!validateSunday()){
+        if (!validateMonday() | !validateTuesday() | !validateWednesday() | !validateThursday() | !validateFriday() | !validateSaturday() | !validateSunday()) {
             return;
         }
         avail = new Availability();
