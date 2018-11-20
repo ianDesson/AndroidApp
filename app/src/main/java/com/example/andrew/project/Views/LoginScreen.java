@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.andrew.project.Model.Availability;
 import com.example.andrew.project.R;
 import com.example.andrew.project.Model.ServiceProvider;
 import com.example.andrew.project.Model.Admin;
@@ -81,6 +82,7 @@ public class LoginScreen extends AppCompatActivity {
                     if (!username.isEmpty()) {
                         ServiceProvider login = dataSnapshot.child("serviceProviders").child(username).getValue(ServiceProvider.class);
                         if (login.getPassword().equals(password)){
+                            login.setAvailability(dataSnapshot.child("serviceProviders").child(username).child("availability").getValue(Availability.class));
                             Toast.makeText(LoginScreen.this, "Successful Login", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(LoginScreen.this, WelcomeScreen.class);
                             intent.putExtra("User", login);

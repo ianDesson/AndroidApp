@@ -3,6 +3,7 @@ package com.example.andrew.project.Views;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,8 +16,11 @@ import android.widget.TextView;
 import com.example.andrew.project.Model.Availability;
 import com.example.andrew.project.Model.ServiceProvider;
 import com.example.andrew.project.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -27,6 +31,7 @@ public class AvailabilityListView extends AppCompatActivity {
 
     ServiceProvider user;
 
+
     @Override
     public void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,10 +41,9 @@ public class AvailabilityListView extends AppCompatActivity {
 
         Intent intent = getIntent();
         user = (ServiceProvider) intent.getSerializableExtra("User");
+        Availability availability = user.getAvailability();
 
         listView = findViewById(R.id.availability_list);
-
-        Availability availability = user.getAvailability();
 
         ArrayList<String> days = new ArrayList<>();
         ArrayList<Integer> startTimes = new ArrayList<>();
@@ -56,37 +60,33 @@ public class AvailabilityListView extends AppCompatActivity {
                     //This is an end time
                     endTimes.add(time);
                 }
+                switch (i) {
+                    case 0:
+                        days.add("Sunday");
+                        break;
+                    case 2:
+                        days.add("Monday");
+                        break;
+                    case 4:
+                        days.add("Tuesday");
+                        break;
+                    case 6:
+                        days.add("Wednesday");
+                        break;
+                    case 8:
+                        days.add("Thursday");
+                        break;
+                    case 10:
+                        days.add("Friday");
+                        break;
+                    case 12:
+                        days.add("Sunday");
+                        break;
+                }
             }
-            switch (time) {
-                case 0:
-                case 1:
-                    days.add("Sunday");
-                    break;
-                case 2:
-                case 3:
-                    days.add("Monday");
-                    break;
-                case 4:
-                case 5:
-                    days.add("Tuesday");
-                    break;
-                case 6:
-                case 7:
-                    days.add("Wednesday");
-                    break;
-                case 8:
-                case 9:
-                    days.add("Thursday");
-                    break;
-                case 10:
-                case 11:
-                    days.add("Friday");
-                    break;
-                case 12:
-                case 13:
-                    days.add("Sunday");
-                    break;
-            }
+        }
+        for (String c : days) {
+            Log.d("REEEEEEEEEEEEEEEEE", c);
         }
         String[] days2 = new String[days.size()];
         days2 = days.toArray(days2);
@@ -123,7 +123,7 @@ public class AvailabilityListView extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return days.length-1;
+            return startTimes.length;
         }
 
         @Override
