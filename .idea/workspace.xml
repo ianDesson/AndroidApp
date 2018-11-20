@@ -11,9 +11,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="360c893c-fec1-4766-9bc7-0c57ca9921dc" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/andrew/project/Model/Availability.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/andrew/project/Model/Availability.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/andrew/project/Model/ServiceProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/andrew/project/Model/ServiceProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/andrew/project/Views/AvailabilityView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/andrew/project/Views/AvailabilityView.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,8 +46,8 @@
       <file leaf-file-name="AvailabilityView.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/andrew/project/Views/AvailabilityView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="165" column="40" lean-forward="true" selection-start-line="165" selection-start-column="40" selection-end-line="165" selection-end-column="40" />
+            <state relative-caret-position="564">
+              <caret line="176" column="9" selection-start-line="176" selection-start-column="9" selection-end-line="176" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -58,8 +55,8 @@
       <file leaf-file-name="Availability.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/andrew/project/Model/Availability.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="71" column="5" selection-start-line="69" selection-start-column="44" selection-end-line="71" selection-end-column="5" />
+            <state relative-caret-position="660">
+              <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
               <folding>
                 <element signature="e#735#736#0" expanded="true" />
                 <element signature="e#766#767#0" expanded="true" />
@@ -2380,8 +2377,8 @@
       <list>
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/andrew/project/Views/ServiceProviderServicesView.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/andrew/project/Model/ServiceProvider.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/andrew/project/Views/AvailabilityView.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/andrew/project/Model/Availability.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/andrew/project/Views/AvailabilityView.java" />
       </list>
     </option>
   </component>
@@ -2581,7 +2578,7 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" anchor="bottom" id="Logcat" order="7" visible="true" weight="0.35397196" />
+      <window_info active="true" anchor="bottom" id="Logcat" order="7" visible="true" weight="0.0" />
       <window_info id="Captures" order="2" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
@@ -2678,8 +2675,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/andrew/project/Model/Availability.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="71" column="5" selection-start-line="69" selection-start-column="44" selection-end-line="71" selection-end-column="5" />
+        <state relative-caret-position="660">
+          <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
           <folding>
             <element signature="e#735#736#0" expanded="true" />
             <element signature="e#766#767#0" expanded="true" />
@@ -2693,8 +2690,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/andrew/project/Views/AvailabilityView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="165" column="40" lean-forward="true" selection-start-line="165" selection-start-column="40" selection-end-line="165" selection-end-column="40" />
+        <state relative-caret-position="564">
+          <caret line="176" column="9" selection-start-line="176" selection-start-column="9" selection-end-line="176" selection-end-column="9" />
         </state>
       </provider>
     </entry>

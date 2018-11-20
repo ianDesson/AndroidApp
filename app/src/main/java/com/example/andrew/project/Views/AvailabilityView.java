@@ -96,24 +96,76 @@ public class AvailabilityView extends AppCompatActivity {
         int mondayStart = Integer.parseInt(textViewMon.getText().toString().trim());
         int mondayEnd = Integer.parseInt(textViewMonEnd.getText().toString().trim());
 
+        String input;
+
         if (mondayStartStr.isEmpty()) {
             textViewMon.setError("Empty field");
+            input = "Cannot input an empty field.";
+            Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
             return false;
         } else if (mondayEndStr.isEmpty()) {
             textViewMonEnd.setError("Empty field");
+            input = "Cannot input an empty field.";
+            Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
             return false;
         } else if (mondayStart > 24) {
             textViewMon.setError("Must be 0-24h");
+            input = "Must input an hour 0-24";
+            Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
             return false;
         } else if (mondayEnd > 24) {
             textViewMonEnd.setError("Must be 0-24h");
+            input = "Must input an hour 0-24";
+            Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
             return false;
         } else if (mondayEnd <= mondayStart) {
             textViewMon.setError("Invalid range");
+            input = "Invalid range: end time must be bigger than start time";
+            Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
             return false;
         } else {
             textViewMon.setError(null);
             textViewMonEnd.setError(null);
+            return true;
+        }
+    }
+
+    private boolean validateTuesday() {
+        String tuesdayStartStr = textViewTue.getText().toString().trim();
+        String tuesdayEndStr = textViewTueEnd.getText().toString().trim();
+        int tuesdayStart = Integer.parseInt(textViewTue.getText().toString().trim());
+        int tuesdayEnd = Integer.parseInt(textViewTueEnd.getText().toString().trim());
+
+        String input;
+
+        if (tuesdayStartStr.isEmpty()) {
+            textViewTue.setError("Empty field");
+            input = "Cannot input an empty field.";
+            Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
+            return false;
+        } else if (tuesdayEndStr.isEmpty()) {
+            textViewTueEnd.setError("Empty field");
+            input = "Cannot input an empty field.";
+            Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
+            return false;
+        } else if (tuesdayStart > 24) {
+            textViewTue.setError("Must be 0-24h");
+            input = "Must input an hour 0-24";
+            Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
+            return false;
+        } else if (tuesdayEnd > 24) {
+            textViewTueEnd.setError("Must be 0-24h");
+            input = "Must input an hour 0-24";
+            Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
+            return false;
+        } else if (tuesdayEnd <= tuesdayStart) {
+            textViewTue.setError("Invalid range");
+            input = "Invalid range: end time must be bigger than start time";
+            Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
+            return false;
+        } else {
+            textViewTue.setError(null);
+            textViewTueEnd.setError(null);
             return true;
         }
     }
@@ -123,7 +175,6 @@ public class AvailabilityView extends AppCompatActivity {
         if(!validateMonday()){
             return;
         }
-        
         avail = new Availability();
 
         //Sunday
