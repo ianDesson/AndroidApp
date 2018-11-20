@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.andrew.project.Model.Availability;
 import com.example.andrew.project.Model.ServiceProvider;
@@ -18,15 +19,33 @@ import com.google.firebase.database.FirebaseDatabase;
 public class AvailabilityView extends AppCompatActivity {
 
     Button saveChangesButton;
+
     //Start times
-    EditText textViewSat; EditText textViewSun; EditText textViewMon; EditText textViewTue;
-    EditText textViewWed; EditText textViewThu; EditText textViewFri;
+    EditText textViewSat;
+    EditText textViewSun;
+    EditText textViewMon;
+    EditText textViewTue;
+    EditText textViewWed;
+    EditText textViewThu;
+    EditText textViewFri;
+
     //End times
-    EditText textViewSatEnd; EditText textViewSunEnd; EditText textViewMonEnd; EditText textViewTueEnd;
-    EditText textViewWedEnd; EditText textViewThuEnd; EditText textViewFriEnd;
+    EditText textViewSatEnd;
+    EditText textViewSunEnd;
+    EditText textViewMonEnd;
+    EditText textViewTueEnd;
+    EditText textViewWedEnd;
+    EditText textViewThuEnd;
+    EditText textViewFriEnd;
+
     //Checkboxes
-    CheckBox checkBoxMon; CheckBox checkBoxTue; CheckBox checkBoxWed; CheckBox checkBoxThu; CheckBox checkBoxFri;
-    CheckBox checkBoxSat; CheckBox checkBoxSun;
+    CheckBox checkBoxMon;
+    CheckBox checkBoxTue;
+    CheckBox checkBoxWed;
+    CheckBox checkBoxThu;
+    CheckBox checkBoxFri;
+    CheckBox checkBoxSat;
+    CheckBox checkBoxSun;
     Availability avail;
 
     ServiceProvider user;
@@ -34,7 +53,7 @@ public class AvailabilityView extends AppCompatActivity {
     Intent intent2;
 
     @Override
-    public void onCreate(Bundle savedInstanceState){
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.availability);
         //Start times
@@ -45,6 +64,7 @@ public class AvailabilityView extends AppCompatActivity {
         textViewWed = findViewById(R.id.editTextWednesday);
         textViewThu = findViewById(R.id.editTextThursday);
         textViewFri = findViewById(R.id.editTextFriday);
+
         //End times (dun dun dunnn)
         textViewSatEnd = findViewById(R.id.editTextSaturdayEnd);
         textViewSunEnd = findViewById(R.id.editTextSundayEnd);
@@ -53,6 +73,7 @@ public class AvailabilityView extends AppCompatActivity {
         textViewWedEnd = findViewById(R.id.editTextWednesdayEnd);
         textViewThuEnd = findViewById(R.id.editTextThursdayEnd);
         textViewFriEnd = findViewById(R.id.editTextFridayEnd);
+
         //Checkboxes
         checkBoxMon = findViewById(R.id.checkBoxMonday);
         checkBoxTue = findViewById(R.id.checkBoxTuesday);
@@ -64,15 +85,52 @@ public class AvailabilityView extends AppCompatActivity {
 
         intent = getIntent();
         user = (ServiceProvider) intent.getSerializableExtra("User");
-        intent2 = new Intent(AvailabilityView.this,  ServicesView.class);
+        intent2 = new Intent(AvailabilityView.this, ServicesView.class);
         saveChangesButton = findViewById(R.id.AvailabilitySaveChangesButton);
 
     }
 
-    public void saveChangesButton(View view){
+    private boolean validateMonday() {
+        String mondayStartStr = textViewMon.getText().toString().trim();
+        String mondayEndStr = textViewMonEnd.getText().toString().trim();
+        int mondayStart = Integer.parseInt(textViewMon.getText().toString().trim());
+        int mondayEnd = Integer.parseInt(textViewMonEnd.getText().toString().trim());
+
+        if (mondayStartStr.isEmpty()) {
+            textViewMon.setError("Empty field");
+            return false;
+        } else if (mondayEndStr.isEmpty()) {
+            textViewMonEnd.setError("Empty field");
+            return false;
+        } else if (mondayStart > 24) {
+            textViewMon.setError("Must be 0-24h");
+            return false;
+        } else if (mondayEnd > 24) {
+            textViewMonEnd.setError("Must be 0-24h");
+            return false;
+        } else if (mondayEnd <= mondayStart) {
+            textViewMon.setError("Invalid range");
+            return false;
+        } else {
+            textViewMon.setError(null);
+            textViewMonEnd.setError(null);
+            return true;
+        }
+    }
+
+    public void saveChangesButton(View view) {
+
+        if(!validateMonday()){
+            return;
+        }
+        String input = "Monday" + "test1.0validation";
+        Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
+
+
 
 
         avail = new Availability();
+
         //Saturday
         if (checkBoxSat.isChecked()) {
             avail.setSaturdayStart(Integer.parseInt(textViewSat.getText().toString().trim()));
@@ -81,6 +139,7 @@ public class AvailabilityView extends AppCompatActivity {
             avail.setSaturdayStart(-1);
             avail.setSaturdayEnd(-1);
         }
+
         //Sunday
         if (checkBoxSun.isChecked()) {
             avail.setSundayStart(Integer.parseInt(textViewSun.getText().toString().trim()));
@@ -89,6 +148,7 @@ public class AvailabilityView extends AppCompatActivity {
             avail.setSundayStart(-1);
             avail.setSundayEnd(-1);
         }
+
         //Monday
         if (checkBoxMon.isChecked()) {
             avail.setMondayStart(Integer.parseInt(textViewMon.getText().toString().trim()));
@@ -97,6 +157,7 @@ public class AvailabilityView extends AppCompatActivity {
             avail.setMondayStart(-1);
             avail.setMondayEnd(-1);
         }
+
         //Tuesday
         if (checkBoxTue.isChecked()) {
             avail.setTuesdayStart(Integer.parseInt(textViewTue.getText().toString().trim()));
@@ -105,6 +166,7 @@ public class AvailabilityView extends AppCompatActivity {
             avail.setTuesdayStart(-1);
             avail.setTuesdayEnd(-1);
         }
+
         //Wednesday
         if (checkBoxWed.isChecked()) {
             avail.setWednesdayStart(Integer.parseInt(textViewWed.getText().toString().trim()));
@@ -113,6 +175,7 @@ public class AvailabilityView extends AppCompatActivity {
             avail.setWednesdayStart(-1);
             avail.setWednesdayEnd(-1);
         }
+
         //Thursday
         if (checkBoxThu.isChecked()) {
             avail.setThursdayStart(Integer.parseInt(textViewThu.getText().toString().trim()));
@@ -121,6 +184,7 @@ public class AvailabilityView extends AppCompatActivity {
             avail.setThursdayStart(-1);
             avail.setThursdayEnd(-1);
         }
+
         //Friday
         if (checkBoxFri.isChecked()) {
             avail.setFridayStart(Integer.parseInt(textViewFri.getText().toString().trim()));
@@ -129,7 +193,8 @@ public class AvailabilityView extends AppCompatActivity {
             avail.setFridayStart(-1);
             avail.setFridayEnd(-1);
         }
-       // Save to database
+
+        // Save to database
         DatabaseReference db = FirebaseDatabase.getInstance().getReference("users");
         db.child("serviceProviders").child(user.getUsername()).child("availabilty").setValue(avail);
 

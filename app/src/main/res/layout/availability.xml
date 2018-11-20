@@ -51,7 +51,8 @@
                 android:layout_weight="0"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="Start" />
+                android:digits="0123456789"
+                android:hint="Start" />
 
             <EditText
                 android:id="@+id/editTextMondayEnd"
@@ -60,7 +61,8 @@
                 android:layout_weight="0"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="End" />
+                android:digits="0123456789"
+                android:hint="End" />
 
             <CheckBox
                 android:id="@+id/checkBoxMonday"
@@ -92,7 +94,8 @@
                 android:layout_weight="0"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="Start" />
+                android:digits="0123456789"
+                android:hint="Start" />
 
             <EditText
                 android:id="@+id/editTextTuesdayEnd"
@@ -101,7 +104,8 @@
                 android:layout_weight="0"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="End" />
+                android:digits="0123456789"
+                android:hint="End" />
 
             <CheckBox
                 android:id="@+id/checkBoxTuesday"
@@ -134,7 +138,8 @@
                 android:layout_weight="0"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="Start" />
+                android:digits="0123456789"
+                android:hint="Start" />
 
             <EditText
                 android:id="@+id/editTextWednesdayEnd"
@@ -143,7 +148,8 @@
                 android:layout_weight="0"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="End" />
+                android:digits="0123456789"
+                android:hint="End" />
 
             <CheckBox
                 android:id="@+id/checkBoxWednesday"
@@ -177,7 +183,8 @@
                 android:layout_weight="0"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="Start" />
+                android:digits="0123456789"
+                android:hint="Start" />
 
             <EditText
                 android:id="@+id/editTextThursdayEnd"
@@ -186,7 +193,8 @@
                 android:layout_weight="0"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="End" />
+                android:digits="0123456789"
+                android:hint="End" />
 
             <CheckBox
                 android:id="@+id/checkBoxThursday"
@@ -218,7 +226,8 @@
                 android:layout_weight="0"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="Start" />
+                android:digits="0123456789"
+                android:hint="Start" />
 
             <EditText
                 android:id="@+id/editTextFridayEnd"
@@ -227,7 +236,8 @@
                 android:layout_weight="0"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="End" />
+                android:digits="0123456789"
+                android:hint="End" />
 
             <CheckBox
                 android:id="@+id/checkBoxFriday"
@@ -259,7 +269,8 @@
                 android:layout_weight="0"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="Start" />
+                android:digits="0123456789"
+                android:hint="Start" />
 
             <EditText
                 android:id="@+id/editTextSaturdayEnd"
@@ -268,7 +279,8 @@
                 android:layout_weight="0"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="End" />
+                android:digits="0123456789"
+                android:hint="End" />
 
             <CheckBox
                 android:id="@+id/checkBoxSaturday"
@@ -300,7 +312,8 @@
                 android:layout_weight="0"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="Start" />
+                android:digits="0123456789"
+                android:hint="Start" />
 
             <EditText
                 android:id="@+id/editTextSundayEnd"
@@ -309,7 +322,8 @@
                 android:layout_weight="0"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="End" />
+                android:digits="0123456789"
+                android:hint="End" />
 
             <CheckBox
                 android:id="@+id/checkBoxSunday"

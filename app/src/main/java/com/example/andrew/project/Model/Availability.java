@@ -18,7 +18,6 @@ public class Availability implements Serializable {
     public int getTime(int index) {
         return times[index];
     }
-
     public int[] getTimes() {
         return times;
     }
@@ -28,7 +27,6 @@ public class Availability implements Serializable {
     public void setSundayStart (int time) {
         times[0] = time;
     }
-
     public void setSundayEnd (int time) {
         times[7] = time;
     }
@@ -36,7 +34,6 @@ public class Availability implements Serializable {
     public void setMondayStart (int time) {
         times[1] = time;
     }
-
     public void setMondayEnd (int time) {
         times[8] = time;
     }
@@ -44,7 +41,6 @@ public class Availability implements Serializable {
     public void setTuesdayStart (int time) {
         times[2] = time;
     }
-
     public void setTuesdayEnd (int time) {
         times[9] = time;
     }
@@ -52,7 +48,6 @@ public class Availability implements Serializable {
     public void setWednesdayStart (int time) {
         times[3] = time;
     }
-
     public void setWednesdayEnd (int time) {
         times[10] = time;
     }
@@ -60,7 +55,6 @@ public class Availability implements Serializable {
     public void setThursdayStart (int time) {
         times[4] = time;
     }
-
     public void setThursdayEnd (int time) {
         times[11] = time;
     }
@@ -68,7 +62,6 @@ public class Availability implements Serializable {
     public void setFridayStart (int time) {
         times[5] = time;
     }
-
     public void setFridayEnd (int time) {
         times[12] = time;
     }
@@ -76,9 +69,7 @@ public class Availability implements Serializable {
     public void setSaturdayStart (int time) {
         times[6] = time;
     }
-
     public void setSaturdayEnd (int time) {
         times[13] = time;
     }
-
 }
