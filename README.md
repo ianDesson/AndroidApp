@@ -34,3 +34,10 @@ Andrew Rizk
 ```
 > Create Homeowner User Functionality
 ```
+
+#Starts Here
+Build Status
+[![Build
+Status](https://circleci.com/gh/ianDesson/AndroidApp.png?branch=master)](https://circle
+ci.com/gh/ianDesson/AndroidApp)
+#Ends Here
