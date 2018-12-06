@@ -23,11 +23,10 @@
         <TextView
             android:id="@+id/welcome"
             android:layout_width="wrap_content"
-            android:layout_height="175dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal"
-            android:layout_weight="1"
             android:autoText="false"
             android:contentDescription="Welcome"
             android:text="Welcome"
@@ -40,11 +39,10 @@
         <TextView
             android:id="@+id/username_display"
             android:layout_width="wrap_content"
-            android:layout_height="165dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal"
-            android:layout_weight="1"
             android:contentDescription="account username"
             android:text="username"
             android:textSize="23sp"
@@ -55,10 +53,9 @@
         <TextView
             android:id="@+id/signed_in_as_a"
             android:layout_width="wrap_content"
-            android:layout_height="156dp"
+            android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_gravity="center_horizontal"
-            android:layout_weight="1"
             android:text="You are signed in as a"
             android:textSize="20sp"
             tools:layout_editor_absoluteX="0dp"
@@ -68,11 +65,10 @@
         <TextView
             android:id="@+id/account_type"
             android:layout_width="wrap_content"
-            android:layout_height="175dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal"
-            android:layout_weight="1"
             android:contentDescription="The account type"
             android:text="TextView"
             android:textSize="20sp"
@@ -84,17 +80,16 @@
             android:id="@+id/srvcBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:onClick="srvcBtn"
             android:text="Services"
+            android:textSize="20sp"
             android:visibility="invisible"
-            tools:text="View Services" />
+            tools:text="Services" />
 
         <LinearLayout
             android:id="@+id/service_provider_info"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:orientation="vertical"
             android:visibility="invisible">
 
@@ -114,7 +109,6 @@
                     android:id="@+id/services_view_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:text="View"
                     android:onClick="srcvViewBtn"/>
 
@@ -122,7 +116,6 @@
                     android:id="@+id/services_add_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:text="Add"
                     android:onClick="srcvAddBtn"/>
             </LinearLayout>
@@ -136,24 +129,22 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/availabilities_view_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="View"
-                    android:onClick="avlViewBtn"/>
+                    android:onClick="avlViewBtn"
+                    android:text="View" />
 
                 <Button
                     android:id="@+id/availabilities_edit_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Edit"
-                    android:onClick="avlEditBtn"/>
+                    android:onClick="avlEditBtn"
+                    android:text="Edit" />
             </LinearLayout>
         </LinearLayout>
 
