@@ -160,6 +160,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:onClick="b_search_ho"
         android:text="Search Services"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/linearLayout"

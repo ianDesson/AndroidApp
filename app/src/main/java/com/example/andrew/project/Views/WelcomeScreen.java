@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.andrew.project.Model.Availability;
 import com.example.andrew.project.R;
 import com.example.andrew.project.Model.Admin;
 import com.example.andrew.project.Model.HomeOwner;
@@ -25,6 +26,7 @@ public class WelcomeScreen extends AppCompatActivity{
         TextView accountType = (TextView) findViewById(R.id.account_type);
         Intent intent = getIntent();
         Button srvcBtn = findViewById(R.id.srvcBtn);
+        Button b_search_ho = findViewById(R.id.b_search_ho);
 
         user = (User) intent.getSerializableExtra("User");
         usernameDisplay.setText(user.getUsername());
@@ -34,6 +36,9 @@ public class WelcomeScreen extends AppCompatActivity{
         }
         else if(user instanceof HomeOwner){
             accountType.setText("Home Owner");
+            srvcBtn.setVisibility(View.INVISIBLE);
+            b_search_ho.setVisibility(View.VISIBLE);
+
         }
         else{
             accountType.setText("Service Provider");
@@ -77,6 +82,13 @@ public class WelcomeScreen extends AppCompatActivity{
         intent.putExtra("User", user);
         startActivity(intent);
 
+    }
+
+    public void b_search_ho (View view){
+        //button for going to the search view for home owners
+        Intent intent = new Intent (WelcomeScreen.this, SearchServicesView.class);
+        intent.putExtra("User", user);
+        startActivity(intent);
     }
 
 }
